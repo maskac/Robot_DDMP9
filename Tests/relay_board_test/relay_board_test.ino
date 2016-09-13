@@ -3,6 +3,7 @@
 int i;
 
 void setup() {
+  // Sets A0 - A3 as output
   pinMode(A0, OUTPUT);
   pinMode(A1, OUTPUT);
   pinMode(A2, OUTPUT);
