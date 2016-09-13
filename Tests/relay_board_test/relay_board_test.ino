@@ -10,7 +10,7 @@ void setup() {
 }
 
 void loop() {
-
+  // count from 1 to 15, and binary output to relay board
   for (i = 1; i <= 15; i++)
   {
     if (i & 1)
