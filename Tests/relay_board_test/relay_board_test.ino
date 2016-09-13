@@ -1,4 +1,4 @@
-//this shot code tests all combinatin of relay sets
+//this short code tests all combinatin of relay sets
 
 int i;
 
