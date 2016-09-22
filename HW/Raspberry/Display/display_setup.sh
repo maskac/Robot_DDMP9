@@ -14,6 +14,7 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
   echo Please wait, this WILL take a while. A long while. May be up to 20 minutes.
   echo Go get a coffee
+  sleep 5
   curl -SLs https://apt.adafruit.com/add-pin | bash
   echo 10%
   apt-get -y install raspberrypi-bootloader
@@ -23,6 +24,7 @@ then
   adafruit-pitft-helper -t 22
   echo 100%
   echo done
-  echo rebooting now
+  read -rsp $'Rebooting now, press any key to continue...' -n1 key
   reboot
 fi
+
