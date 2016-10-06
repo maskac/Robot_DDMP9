@@ -1,1 +1,2 @@
 # Projektová dokumentace
+## Hardware
