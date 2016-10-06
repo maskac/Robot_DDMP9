@@ -1,5 +1,11 @@
 #Project Documentation
 
+##Robot Design
+
+##Remote Control
+
+##Internal Communication
+
 ##Video feed trasmission
 
 ##Status Reporting
