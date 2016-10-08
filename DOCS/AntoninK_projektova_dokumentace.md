@@ -1,2 +1,16 @@
-# R.O.B.E.Š.E.K
+# Projekt R.O.B.E.Š.E.K
 ## HARDWARE
+
+## DÁLKOVÉ OVLÁDÁNÍ
+
+## KAMERY
+
+## REPORTOVÁNÍ STAVU
+
+## OCHRANA PROTI POŠKOZENÍ
+
+## OSVĚTLENÍ
+
+## ČERNÁ SKŘÍŇKA
+
+## ZTRÁTA SIGNÁLU
