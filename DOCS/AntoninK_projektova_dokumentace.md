@@ -13,5 +13,9 @@ Robot je ovládán z tabletu nebo z mobilu prostřednictvím aplikace [RoboRemo]
 ## OSVĚTLENÍ
 
 ## ČERNÁ SKŘÍŇKA
+### Zabezpečení
 
+### Struktura
+Zápis do černé skříňky se provede, když přijde příkaz z ovládacího tabletu nebo když dojde k události jako je ztráta nebo najití ovládacího signálu**,** ztráta nebo najití GPS (v případě ztráty GPS se zaznamená GPS souřadnice z posledního místa s GPS signálem)**,** zaznamenání překážky ve směru jízdy**,** nízký stav baterie**,** zaznamenání vysoké teploty **nebo** příliš vysokého stoupání nebo klesání.
+Zápis bude obsahovat: typ události (buď přijetí příkazu nebo zaznamenání události)**,** příkaz nebo událost**,** čas a datum**,** vnější teplotu**,** GPS poloha**,** rychost**,** stav baterie **a** stoupání nebo klesání.
 ## ZTRÁTA SIGNÁLU
