@@ -1,1 +1,2 @@
-# * R.O.B.E.Š.E.K *
+# R.O.B.E.Š.E.K
+## HARDWARE
