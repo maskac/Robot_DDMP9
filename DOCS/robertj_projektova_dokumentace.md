@@ -1,4 +1,4 @@
- od seb# Projektová dokumentace
+# Projektová dokumentace
 
 ## Příjmání příkazů
 
