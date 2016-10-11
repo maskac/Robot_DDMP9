@@ -1,5 +1,19 @@
 # Projektová dokumentace
 
+## Základy
+### Hardware
++ Raspberry PI3
++ 2x Raspberry cam2
++ Arduino Mega2560
++ Arduino Shield dual L297D
++ 2x servo motors
++ 4x motor with transmission 
++ GPS module RS232
++ DS18B20 temperature digital sensor
++ ESP8622 - Wi-Fi connection
++ 4 channel relay board
++ LM2596 switching power supply
+
 ## Příjmání příkazů
 
 ## Odesílání informací
