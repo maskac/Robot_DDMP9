@@ -22,4 +22,4 @@ Zápis do černé skříňky se provede, když přijde příkaz z ovládacího t
 Zápis bude obsahovat: typ události (buď přijetí příkazu nebo zaznamenání události)**,** příkaz nebo událost**,** čas a datum**,** vnější teplotu**,** GPS poloha**,** rychost**,** stav baterie **a** stoupání nebo klesání.
 
 ## ZTRÁTA SIGNÁLU
-Při ztrátě signálu bude robot postupovat přesně opečně podle příkazů uložených ve Černé skříňce. Pokud dojde k velkému naklonění se robot pokusí jet na opačnou stranu, a pokud se naklonění nezmenší zůstane robot na místě (toto zabezpečení je proti pádu ze schodů). Po celou dobu vracení se na místo bude zapnuto výstražné blikání.
+Při ztrátě signálu bude robot postupovat přesně opečně podle příkazů uložených v Černé skříňce. Pokud dojde k velkému naklonění robot se pokusí jet na opačnou stranu, a pokud se naklonění nezmenší zůstane robot na místě (toto zabezpečení je proti pádu ze schodů).Systémy na ochranu proti poškození budou fungovati jako normálně. Po celou dobu vracení se na místo bude zapnuto výstražné blikání.
