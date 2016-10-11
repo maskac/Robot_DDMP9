@@ -7,6 +7,7 @@ Robot je ovládán z tabletu nebo z mobilu prostřednictvím aplikace [RoboRemo]
 ## KAMERY
 
 ## REPORTOVÁNÍ STAVU
+Robot bude reportovat svůj stav přes web spolu s přenosem obrazu z kamer. Náléhavější věci jako například nízký stav baterie bude reportovat rovnou do řídícího tabletu přes aplikaci RoboRemo.
 
 ## OCHRANA PROTI POŠKOZENÍ
 
