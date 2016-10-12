@@ -5,28 +5,38 @@
 
 The robot has a rectangular shape. It consists of a steel base  *40 * 20 * 20* large.
 Movement is created by 4 wheels, each with its own electric motor with transmission.
-The whole robot is powered by a 12V lead-acid battery.
+The whole robot is powered by a 12V lead-acid battery. Power goes from the battery through a fuse into a LM2596. From there it is distributed to a dual L297D realy board to drive the motors, and to the rest of the electronics. There are 2 cameras on board, one of them is equipped with 2 servos, allowing 180° by 180° rotation. Also on board are 4 relay boards. To these, front and back lights are connected (see [Lights](#Lights))
 
-###Electronics
+###Computers
 
 The robot has 3 CPUs.
 
 ####Raspberry Pi 3
 
+The raspberry receives and processes all the tellemetry data and the camera feed(s). It communicates with the Arduino over *RS232 over USB*.
+
 ####ESP8266
 
+The ESP receives control signals over WiFi and then sends them over RS232 to the Arduino
+
 ####Arduino Mega 2560
+
+The Arduino Receives control signals from the ESP and then processes them. If the desired action is movement or camera rotation, the Arduino sends signals to the L293Ds using digital parallel communication. If the desired action is switching the Head (or reversing) lights on, a signal is sent to the relay boards
+
+#####L293D
+
+There are 2 L293Ds on board. They are used to control the motors and camera servos.
 
 ##Remote Control
 
 The robot is controlled remotely using an app called [RoboRemo](https://play.google.com/store/apps/details?id=com.hardcodedjoy.roboremo)
-From the app, the signal is first received by an *ESP8266*
+From the app, the signal is first received by the *ESP8266*
 
 ##Internal Communication
 
 ##Video feed trasmission
 
-Video is captured by two cams. One is the [Raspberry Camera Module v2](https://www.raspberrypi.org/products/camera-module-v2/), can be rotated in two axis, is in the front of the robot. The other is a USB webcam (The Raspi can only have one raspberry camera module connected at once) ,cannot be rotated. The webcams are connected to the Raspberry Pi by the Pi's camera connector and USB, respectively. Here the videos are compressed and then displayed on a webpage hosted on the raspberry. (Transmitting to other devices that want to watch the stream is done using the Pi's onboard WiFi)
+Video is captured by two cams. One is the [Raspberry Camera Module v2](https://www.raspberrypi.org/products/camera-module-v2/), can be rotated in two axis, is in the front of the robot. The other is a USB webcam, cannot be rotated. The webcams are connected to the Raspberry Pi by the Pi's camera connector and USB, respectively. There the videos are compressed and then displayed on a webpage hosted on the raspberry. (Transmitting to other devices that want to watch the stream is done using the Pi's onboard WiFi)
 
 ##Status Reporting
 
@@ -66,4 +76,4 @@ In order to be seen, and to see, the robot will be equipped with 4 high power wh
 
 
 
-TODO:HW (DESIGN, ELECTRONICS) , INT COMM, REMOT COMM, ~~VIDEO~~, TELLEMETRY (LOC, TEMP,  ~~BATT ~~, ACC), ~~ANTICOLLISION~~, ~~LIGHTS~~, BLACKBOX, FAILSAFE
+TODO:HW (DESIGN, ELECTRONICS) , INT COMM, REMOT COMM, ~~VIDEO~~, TELLEMETRY (LOC, TEMP,  ~~BATT~~, ACC), ~~ANTICOLLISION~~, ~~LIGHTS~~, BLACKBOX, FAILSAFE
