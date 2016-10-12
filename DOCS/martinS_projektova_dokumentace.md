@@ -4,8 +4,8 @@
 ###Design
 
 The robot has a rectangular shape. It consists of a steel base  *40 * 20 * 20* large.
-Movement is created by 4 wheels, each with its own electric motor with transmission. These motors are not steerable, steering is achived by rotating one set of wheels in one direction, and the other two wheels in the other direction.
-The whole robot is powered by a 12V lead-acid battery. Power goes from the battery through a fuse into a LM2596. From there it is distributed to a dual L297D realy board to drive the motors, and to the rest of the electronics. There are 2 cameras on board, one of them is equipped with 2 servos, allowing 180° by 180° rotation. Also on board are 4 relay boards. To these, front and back lights are connected (see [Lights](##Lights) )
+Movement is created by 4 wheels, each with its own electric motor with transmission. These motors are not steerable, steering is achieved by rotating the left wheels in one direction, and the other two wheels in the other direction.
+The whole robot is powered by a 12V lead-acid battery. Power goes from the battery through a fuse into a LM2596. From there it is distributed to a dual L297D realy board to drive the motors, and to the rest of the electronics. There are 2 cameras on board, one of them is equipped with 2 servos, allowing 180° by 180° rotation. Also on board are 4 relay boards. To these, front and back lights are connected (see [Lights](#lights) )
 
 ###Elcetronics
 
@@ -21,19 +21,19 @@ The ESP receives control signals over WiFi and then sends them over RS232 to the
 
 ####Arduino Mega 2560
 
-The Arduino Receives control signals from the ESP and then processes them. If the desired action is movement or camera rotation, the Arduino sends signals to the L293Ds using digital parallel communication. If the desired action is switching the Head (or reversing) lights on, a signal is sent to the relay boards. Also connected to the arduino are the 4 colored LEDs. For info about lights, see [Lights](##Lights)
+The Arduino Receives control signals from the ESP and then processes them. If the desired action is movement or camera rotation, the Arduino sends signals to the L293Ds using digital parallel communication. If the desired action is switching the Head (or reversing) lights on, the signal is sent to the relay boards. Also connected to the arduino are the 4 colored LEDs. For info about lights, see [Lights](#light)
 #####L293D
 
 There are 2 L293Ds on board. They are used to control the motors and camera servos.
 
 ####Kinect
 
-Later on in the development, a kinnect sensor will be added to allow for functions such as object tracking and better autonnomous mod.
+Later on in the development, a kinect sensor will be added to allow for functions such as object tracking and better autonnomous mod.
 
 ##Remote Control
 
 The robot is controlled remotely using an app called [RoboRemo](https://play.google.com/store/apps/details?id=com.hardcodedjoy.roboremo)
-From the app, the signal is first received by the *ESP8266*, the signal is then processed as shown over at [Electronics](###Electronics)
+From the app, the signal is first received by the *ESP8266*, the signal is then processed as shown over at [Electronics](#electronics)
 
 ##Internal Communication
 
