@@ -4,10 +4,10 @@
 ###Design
 
 The robot has a rectangular shape. It consists of a steel base  *40 * 20 * 20* large.
-Movement is created by 4 wheels, each with its own electric motor with transmission.
-The whole robot is powered by a 12V lead-acid battery. Power goes from the battery through a fuse into a LM2596. From there it is distributed to a dual L297D realy board to drive the motors, and to the rest of the electronics. There are 2 cameras on board, one of them is equipped with 2 servos, allowing 180° by 180° rotation. Also on board are 4 relay boards. To these, front and back lights are connected (see [Lights](#Lights))
+Movement is created by 4 wheels, each with its own electric motor with transmission. These motors are not steerable, steering is achived by rotating one set of wheels in one direction, and the other two wheels in the other direction.
+The whole robot is powered by a 12V lead-acid battery. Power goes from the battery through a fuse into a LM2596. From there it is distributed to a dual L297D realy board to drive the motors, and to the rest of the electronics. There are 2 cameras on board, one of them is equipped with 2 servos, allowing 180° by 180° rotation. Also on board are 4 relay boards. To these, front and back lights are connected (see [Lights](##Lights) )
 
-###Computers
+###Elcetronics
 
 The robot has 3 CPUs.
 
@@ -21,16 +21,19 @@ The ESP receives control signals over WiFi and then sends them over RS232 to the
 
 ####Arduino Mega 2560
 
-The Arduino Receives control signals from the ESP and then processes them. If the desired action is movement or camera rotation, the Arduino sends signals to the L293Ds using digital parallel communication. If the desired action is switching the Head (or reversing) lights on, a signal is sent to the relay boards
-
+The Arduino Receives control signals from the ESP and then processes them. If the desired action is movement or camera rotation, the Arduino sends signals to the L293Ds using digital parallel communication. If the desired action is switching the Head (or reversing) lights on, a signal is sent to the relay boards. Also connected to the arduino are the 4 colored LEDs. For info about lights, see [Lights](##Lights)
 #####L293D
 
 There are 2 L293Ds on board. They are used to control the motors and camera servos.
 
+####Kinect
+
+Later on in the development, a kinnect sensor will be added to allow for functions such as object tracking and better autonnomous mod.
+
 ##Remote Control
 
 The robot is controlled remotely using an app called [RoboRemo](https://play.google.com/store/apps/details?id=com.hardcodedjoy.roboremo)
-From the app, the signal is first received by the *ESP8266*
+From the app, the signal is first received by the *ESP8266*, the signal is then processed as shown over at [Electronics](###Electronics)
 
 ##Internal Communication
 
@@ -48,7 +51,7 @@ Location is detected using an RS232 GPS module connected to the Raspberry Pi. Th
 
 ###Temperature
 
-Temperature of key components (battery, raspberry, arduino, motors) as well as external temperature is measured by a bunch of ds18b20 temperature sensors connected to the Raspbery. External and Battery temperatures only are displayed in the stream. Temperatures of the other measured areas are only displayed if they reach a potentialy dangerous temperatures (above 70°C) along with a warning.
+Temperature of key components (battery, raspberry, arduino, motors) as well as external temperature is measured by a bunch of ds18b20 temperature sensors communicating with the Raspbery using 1-wire. External and Battery temperatures only are displayed in the stream. Temperatures of the other measured areas are only displayed if they reach a potentialy dangerous temperatures (above 70°C) along with a warning.
 
 ###Battery Status
 
@@ -60,13 +63,13 @@ Acceleration is measured with an accelerometer such as the *ADXL3*. It is transm
 
 ##Collision Prevention
 
-Distance to objects is measured at all times with 2 laser distance meters connected to the raspberry, placed near the top of the robot (to allow for grass operation). If an object is detected (the distance is becomming shorter), the robot starts lowering its speed until it comes to a complete stop 5 cm away from the object.This can be overriden by a button in the remote cotrol i case the robot is wanted to ram something (or someone) (or driving in high grass)
+Distance to objects is measured at all times with 4 laser distance meters connected to the raspberry, placed near the top of the robot (to allow for grass operation)(2 in the front, 2 in the back of the robot). If an object is detected (the distance is becomming shorter), the robot starts lowering its speed until it comes to a complete stop 5 cm away from the object.This can be overriden by a button in the remote cotrol i case the robot is wanted to ram something (or someone) (or driving in high grass)
 
 Later, this will be replaced by a Kinect, that will allow for further functionallities
 
 ##Lights
 
-In order to be seen, and to see, the robot will be equipped with 4 high power white narrow lighting field LEDs, two in the front, two in the back of the robot. For additional visibility, the robot shall be equipped with 2 blue and 2 red LEDs (**R**ed for **R**ight, b**L**ue for **L**eft) placed each in a top corner of the robot.
+In order to be seen, and to see, the robot will be equipped with 4 high power white narrow beam LEDs, two in the front, two in the back of the robot. For additional visibility, the robot shall be equipped with 2 blue and 2 red low power wide beam LEDs (**R**ed for **R**ight, b**L**ue for **L**eft) placed each in a top corner of the robot. These are blinked using the Arduino.
 
 ##Black Box
 
@@ -76,4 +79,4 @@ In order to be seen, and to see, the robot will be equipped with 4 high power wh
 
 
 
-TODO:HW (DESIGN, ELECTRONICS) , INT COMM, REMOT COMM, ~~VIDEO~~, TELLEMETRY (LOC, TEMP,  ~~BATT~~, ACC), ~~ANTICOLLISION~~, ~~LIGHTS~~, BLACKBOX, FAILSAFE
+TODO: ~~HW (DESIGN, ELECTRONICS)~~, ~~INT COMM~~~, ~~REMOT COMM~~, ~~VIDEO~~, ~~TELLEMETRY (LOC, TEMP,  BATT, ~ACC)~~, ~~ANTICOLLISION~~, ~~LIGHTS)~~ , BLACKBOX, FAILSAFE
