@@ -28,7 +28,7 @@ There are 2 L293Ds on board. They are used to control the motors and camera serv
 
 ####Kinect
 
-Later on in the development, a kinect sensor will be added to allow for functions such as object tracking and better autonnomous mod.
+Later on in the development, a kinect sensor will be added to allow for functions such as object tracking and better autonomous mod.
 
 ##Remote Control
 
