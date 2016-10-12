@@ -1,5 +1,22 @@
 # Projekt R.O.B.E.Š.E.K
 ## HARDWARE
+ + **Raspberry pi 3**
+ + **ESP8266**
+ + **Arduino MEGA 2560**
+ + **RS232 - USB konvertor**
+ + **GPS** modul
+ + 4x **Relay Board**
+ + **DS18B20**
+ + **Raspberry cam 2**
+ + **Microsoft kamera**
+ + **Náklonoměr**
+ + 2x **LIDAR**
+ + 2x **Servo motors**
+ + 4x **Motor** with transmission
+ + **LM2596 switching power supply**
+ + 2x **bílá LED dioda**
+ + 2x **červená LED dioda**
+ + 4x **menší oranžová LED dioda**
 
 ## DÁLKOVÉ OVLÁDÁNÍ
 Robot je ovládán z tabletu nebo z mobilu prostřednictvím aplikace [RoboRemo](https://play.google.com/store/apps/details?id=com.hardcodedjoy.roboremo "RoboRemo na Google play") , jejíž příkazy přijímá wi-fi modem **ESP8266**, který je přes **RS232** kabel posílá **Arduinu MEGA 2560**, který je vykoná a přepošle přes **RS232 - USB konvertor** **Raspberry pi 3**.
