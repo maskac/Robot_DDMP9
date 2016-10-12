@@ -8,6 +8,9 @@ Robot je ovládán z tabletu nebo z mobilu prostřednictvím aplikace [RoboRemo]
 Robot bude reportovat svůj stav přes web spolu s přenosem obrazu z kamer. Náléhavější věci jako například nízký stav baterie bude reportovat rovnou do řídícího tabletu přes aplikaci RoboRemo.
 
 ## OSVĚTLENÍ A OZVUČENÍ
+Robot bude mít vepředu dvě větší bílé **LED diody** a vzadu dvě podobně velké červené **LED diody**.
+Také bude mít čtyří menší oranžové **LED diody**, v každém rohu jedna, které bude používat jednak jako blinkry a také jako výstražné blikání.
+Robot bude mít také klakson.
 
 ## OCHRANA PROTI POŠKOZENÍ
 Pokud dojde k přerušení napájení, **Arduino MEGA 2560** zastaví motory a zapne je až ve chvíli, kdy bude **Raspberry pi 3** nastartované.
