@@ -73,10 +73,10 @@ In order to be seen, and to see, the robot will be equipped with 4 high power wh
 
 ##Black Box
 
+Every single movement of the motors is sent by the arduino into the RasPi, where they are stored onto an USB flash drive along with other tellemetry data (acceleration, temperatures, GPS location,...) and snapshots of the camera feed (every 5 seconds) for 2 hours (to prevent filling its storage and to not damage the SD card), then they are rewritten.
+
 ##In case of losing control signal
 ~~Use a small ammount of explosives to deliver at least a part of the robot to the last known position, where it had control signal.~~
 -not very economical
 
-
-
-TODO: ~~HW (DESIGN, ELECTRONICS)~~, ~~INT COMM~~~, ~~REMOT COMM~~, ~~VIDEO~~, ~~TELLEMETRY (LOC, TEMP,  BATT, ~ACC)~~, ~~ANTICOLLISION~~, ~~LIGHTS)~~ , BLACKBOX, FAILSAFE
+If control signal is lost, the robot will execute all its movements in reverse order (stored in the Black Box). It will keep doing that for 15 minutes or until signal is found. (to prevent the robot from running away) In later versions with the Kinnect, etc. The robot will try to return back where it came from using GPS and the Kinnect.
