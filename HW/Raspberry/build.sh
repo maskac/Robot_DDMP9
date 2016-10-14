@@ -21,6 +21,7 @@ if containsArgument "--install" || containsArgument "-i" ;then			#checks for "in
     $inst="1"
 else if containsArgument "--build" || containsArgument "-b" ;then
     $bld="1"
+					#TODO: add checking for "all", "arduino", "raspberry", "status_check"
 else																	#If no argument is passed, display correct syntax and exit
     echo "Incorrect syntax, correct syntax is ..."
     exit 1	
