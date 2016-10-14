@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #variables setup
-instl="0"																#created and nullled a variable that tells wherther install mode is on or not
-bld="0"																	#created and nullled a variable that tells wherther build mode is on or not
-arguments=( "$@" )														#gets all the arguments givven to the script, puts them into an array called "arguments"
+instl="0"		#created and nullled a variable that tells wherther install mode is on or not
+bld="0"			#created and nullled a variable that tells wherther build mode is on or not
+arguments=( "$@" )	#gets all the arguments givven to the script, puts them into an array called "arguments"
 
 
 #a function that checks if a text is an element of the arguments array
@@ -17,11 +17,11 @@ containsArgument () {
 }
 
 
-if containsArgument "--install" || containsArgument "-i" ;then			#checks for "install" in the array using the containsArgument function.
+if containsArgument "--install" || containsArgument "-i" ;then		#checks for "install" in the array using the containsArgument function.
     $inst="1"
 else if containsArgument "--build" || containsArgument "-b" ;then
     $bld="1"
-					#TODO: add checking for "all", "arduino", "raspberry", "status_check"
+		#TODO: add checking for "all", "arduino", "raspberry", "status_check"
 else																	#If no argument is passed, display correct syntax and exit
     echo "Incorrect syntax, correct syntax is ..."
     exit 1	
@@ -29,9 +29,9 @@ fi
 
 
 #checks for required packages and installs them if they are missing
-required=(python3 arduino arduino-core)								#required packages are stored in the "requiered" array
+required=(python3 arduino arduino-core)				#required packages are stored in the "requiered" array
 echo "Checking for prerequisites"
-for i in "${required[@]}"											#start checking
+for i in "${required[@]}"			#start checking
 do
 echo "Checking for $i"
 if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq 0 ]; then		#asks dpkg wherther the package is install
