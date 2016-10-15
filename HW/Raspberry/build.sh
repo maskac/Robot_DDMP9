@@ -7,7 +7,7 @@ arguments=( "$@" )	#gets all the arguments givven to the script, puts them into 
 
 
 #a function that checks if a text is an element of the arguments array
-containsArgument () {													
+containsArgument () {
     local arg="$1"
     if [[ " ${arguments[@]} " =~ " $arg " ]]; then
         return 0
@@ -17,14 +17,14 @@ containsArgument () {
 }
 
 
-if containsArgument "--install" || containsArgument "-i" ;then		#checks for "install" in the array using the containsArgument function.
-    $inst="1"
-else if containsArgument "--build" || containsArgument "-b" ;then
-    $bld="1"
+if containsArgument "--install" || containsArgument "-i" ; then		#checks for "install" in the array using the containsArgument function.
+    inst="1"
+elif containsArgument "--build" || containsArgument "-b" ; then
+    bld="1"
 		#TODO: add checking for "all", "arduino", "raspberry", "status_check"
-else																	#If no argument is passed, display correct syntax and exit
-    echo "Incorrect syntax, correct syntax is ..."
-    exit 1	
+else
+    echo "Incorrect syntax, correct syntax is ..."	#If no argument is passed, display correct syntax and exit
+    exit 1
 fi
 
 
@@ -36,10 +36,12 @@ do
 echo "Checking for $i"
 if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq 0 ]; then		#asks dpkg wherther the package is install
     echo "$i is not installed, attempting to install it now"
-	if [ "$(id -u)" != "0" ]; then																#if a package is missing and script is not run as root
+	if [ "$(id -u)" != "0" ]; then				#if a package is missing and script is not run as root
 	    echo "You are not root. Please run this script with "sudo" in front of it"
 	    exit 1
     fi
     apt-get update && apt-get -y install $i
 fi
 done
+echo "done checking dependencies"
+exit 0
