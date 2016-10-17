@@ -39,7 +39,7 @@ installAll () {
 		do
 		local dir="$(dirname $script)"
 		echo "Building $script"
-		py3compile -O $scipt
+		pyinstaller $scipt
 		if bootListContains $script  ; then		
 		echo "Installing $script now"
 		checkRoot
@@ -66,7 +66,7 @@ fi
 
 
 #checks for required packages and installs them if they are missing
-required=(python3 arduino arduino-core)				#required packages are stored in the "requiered" array
+required=(python3 arduino arduino-core build-essential manpages-dev python-setuptools python-pip)				#required packages are stored in the "requiered" array
 echo "Checking for prerequisites"
 for i in "${required[@]}"			#start checking
 do
@@ -77,6 +77,7 @@ if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq
     apt-get update && apt-get -y install $i
 fi
 done
+pip install pyinstaller
 echo "done checking dependencies"
 
 if [ $instl = True ] ; then
