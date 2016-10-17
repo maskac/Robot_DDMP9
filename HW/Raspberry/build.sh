@@ -35,9 +35,9 @@ bootListContains () {
 }
 
 installAll () {
-    local dir="$(dirname $script)"
 	for script in "${pithonBuildList[@]}"			#Get all the stuff that is to be built
 		do
+		local dir="$(dirname $script)"
 		echo "Building $script"
 		py3compile -O $scipt
 		if bootListContains $script  ; then		
