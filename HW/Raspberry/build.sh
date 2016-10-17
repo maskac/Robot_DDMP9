@@ -4,9 +4,9 @@
 instl="0"		#created and nullled a variable that tells wherther install mode is on or not
 bld="0"			#created and nullled a variable that tells wherther build mode is on or not
 arguments=( "$@" )	#gets all the arguments givven to the script, puts them into an array called "arguments"
-pithonBuildList=["status/status_check.py"] #a list of the locations of all the stuff that is to be built, for the RPi, written in python3 (the "i" is intentional) 
-piBootList=["status/status_check.py"] #a list of the locations of all the stuff that is to be executed on boot on the Pi.
-arduinoFlash="" #here the main arduino sketch's location is stored.
+pithonBuildList=("status/status_check.py") #a list of the locations of all the stuff that is to be built, for the RPi, written in python3 (the "i" is intentional) 
+piBootList=("status/status_check.py") #a list of the locations of all the stuff that is to be executed on boot on the Pi.
+arduinoFlash=("") #here the main arduino sketch's location is stored.
 
 #a function that checks if a text is an element of the arguments array
 containsArgument () {
@@ -35,14 +35,14 @@ bootListContains () {
 }
 
 installAll () {
-    local arg="$1"
-    for script in "${pithonBuildList[@]}"			#Get all the stuff that is to be built
-do
-echo "Building $script"
-python -m py_compile $scipt #not working yet, need to copy the script to /home/pi/robesek
-if bootListContains $script  ; then		
-    echo "Installing $script now"
-	checkRoot
+    local dir="$(dirname $script)"
+	for script in "${pithonBuildList[@]}"			#Get all the stuff that is to be built
+		do
+		echo "Building $script"
+		py3compile -O $scipt
+		if bootListContains $script  ; then		
+		echo "Installing $script now"
+		checkRoot
 	
 fi
 done
@@ -78,7 +78,7 @@ if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq
 fi
 done
 echo "done checking dependencies"
-if [ instl = True ]; then
+if [ instl = True ] ; then
 		installAll()
 
 
