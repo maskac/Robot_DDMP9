@@ -39,9 +39,9 @@ installAll () {
     for script in "${pithonBuildList[@]}"			#Get all the stuff that is to be built
 do
 echo "Building $script"
-python-build $scipt #not working yet, need to copy the script to /home/pi/robesek
+python -m py_compile $scipt #not working yet, need to copy the script to /home/pi/robesek
 if bootListContains $script  ; then		
-    echo "building and installing $script now"
+    echo "Installing $script now"
 	checkRoot
 	
 fi
