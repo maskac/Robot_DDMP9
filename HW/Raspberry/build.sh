@@ -18,6 +18,13 @@ containsArgument () {
     fi
 }
 
+checkRoot () {				#check if the script is run as root
+    if [ "$(id -u)" != "0" ]; then				
+	    echo "You are not root. Please run this script with "sudo" in front of it"
+	    exit 1
+    fi
+}
+
 bootListContains () {
     local script="$1"
     if [[ " ${piBootList[@]} " =~ " $script " ]]; then
@@ -32,13 +39,11 @@ installAll () {
     for script in "${pithonBuildList[@]}"			#Get all the stuff that is to be built
 do
 echo "Building $script"
+python-build $scipt #not working yet, need to copy the script to /home/pi/robesek
 if bootListContains $script  ; then		
     echo "building and installing $script now"
-	if [ "$(id -u)" != "0" ]; then				#if a package is missing and script is not run as root
-	    echo "You are not root. Please run this script with "sudo" in front of it"
-	    exit 1
-    fi
-    apt-get update && apt-get -y install $i
+	checkRoot
+	
 fi
 done
 }
@@ -68,10 +73,7 @@ do
 echo "Checking for $i"
 if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq 0 ]; then		#asks dpkg wherther the package is install
     echo "$i is not installed, attempting to install it now"
-	if [ "$(id -u)" != "0" ]; then				#if a package is missing and script is not run as root
-	    echo "You are not root. Please run this script with "sudo" in front of it"
-	    exit 1
-    fi
+	checkRoot			#if a package is missing and script is not run as root
     apt-get update && apt-get -y install $i
 fi
 done
