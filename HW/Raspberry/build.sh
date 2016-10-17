@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #variables setup
-instl="0"		#created and nullled a variable that tells wherther install mode is on or not
-bld="0"			#created and nullled a variable that tells wherther build mode is on or not
+instl=False		#created and nullled a variable that tells wherther install mode is on or not
+bld=False			#created and nullled a variable that tells wherther build mode is on or not
 arguments=( "$@" )	#gets all the arguments givven to the script, puts them into an array called "arguments"
 pithonBuildList=("status/status_check.py") #a list of the locations of all the stuff that is to be built, for the RPi, written in python3 (the "i" is intentional) 
 piBootList=("status/status_check.py") #a list of the locations of all the stuff that is to be executed on boot on the Pi.
@@ -52,7 +52,7 @@ done
 
 
 if containsArgument "--install" || containsArgument "-i" ; then		#checks for "install" in the array using the containsArgument function.
-    inst=True
+    instl=True
 elif containsArgument "--build" || containsArgument "-b" ; then
     bld=True
 elif containsArgument "--all" || containsArgument "-a" ; then
