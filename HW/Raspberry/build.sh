@@ -78,9 +78,10 @@ if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq
 fi
 done
 echo "done checking dependencies"
-if [ instl = True ] ; then
-		installAll()
 
+if [ $instl = True ] ; then
+    echo "now installing scripts"
+    installAll
 
 fi
 exit 0
