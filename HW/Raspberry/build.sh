@@ -82,5 +82,5 @@ if [ instl = True ]; then
 		installAll()
 
 
-
+fi
 exit 0
