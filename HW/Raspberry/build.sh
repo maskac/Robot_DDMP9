@@ -36,22 +36,25 @@ bootListContains () {
 }
 
 installAll () {
-preDir=pwd
+	preDir=pwd
         for script in "${pithonBuildList[@]}"                   #Get all the stuff that is to be built
                 do
-                local robesekDir="/home/pi/robesek/${script}" + $script
-                local dir="$(dirname $script)"
-                cd /home/pi/robesek/
-                echo $robesekDir
-                cp -R $dir /home/pi/robesek/
-                echo "Building $script"
-                pyinstaller -F $robesekDir
-                if bootListContains $script  ; then
-                echo "Installing $script now"
-                checkRoot
-                cd $preDir
-fi
-done
+					local scriptLoc="/home/pi/robesek/ ${script}"
+					local scriptDir="$(dirname $scriptLoc)"
+					local dir="$(dirname $script)"
+					echo $scriptLoc
+					cp -R $dir /home/pi/robesek/
+					echo "Building $script"
+					cd scriptDir
+					pyinstaller -F $scriptLoc
+					ls | grep -v dist | parallel rm -rf
+					cp dist/* .
+					rm -rf build status 
+					if bootListContains $script  ; then
+						echo "Installing $script now"
+						checkRoot
+					fi
+				done
 }
 
 
@@ -62,12 +65,12 @@ if containsArgument "--install" || containsArgument "-i" ; then     #checks for 
 elif containsArgument "--build" || containsArgument "-b" ; then
     bld=True
 elif containsArgument "--all" || containsArgument "-a" ; then
-    bld=True
-        inst=True
-        #TODO: add checking for "all", "arduino", "raspberry", "status_check"
+	bld=True
+	instl=True
+		#TODO: add checking for "all", "arduino", "raspberry", "status_check"
 else
-    echo "Incorrect syntax, correct syntax is ..."      #If no argument is passed, display correct syntax and exit
-    exit 1
+	echo "Incorrect syntax, correct syntax is ..."      #If no argument is passed, display correct syntax and exit
+	exit 1
 fi
 
 
