@@ -7,6 +7,7 @@ arguments=( "$@" )	#gets all the arguments givven to the script, puts them into 
 pithonBuildList=("status/status_check.py") #a list of the locations of all the stuff that is to be built, for the RPi, written in python3 (the "i" is intentional) 
 piBootList=("status/status_check.py") #a list of the locations of all the stuff that is to be executed on boot on the Pi.
 arduinoFlash=("") #here the main arduino sketch's location is stored.
+required=(python3 arduino arduino-core build-essential manpages-dev python-setuptools python-pip)				#required packages are stored in the "requiered" array
 
 #a function that checks if a text is an element of the arguments array
 containsArgument () {
@@ -38,8 +39,9 @@ installAll () {
 	for script in "${pithonBuildList[@]}"			#Get all the stuff that is to be built
 		do
 		local dir="$(dirname $script)"
+		cp -R $dir /home/pi/robesek/
 		echo "Building $script"
-		pyinstaller $scipt
+		pyinstaller /home/pi/robesek/$scipt
 		if bootListContains $script  ; then		
 		echo "Installing $script now"
 		checkRoot
@@ -66,7 +68,6 @@ fi
 
 
 #checks for required packages and installs them if they are missing
-required=(python3 arduino arduino-core build-essential manpages-dev python-setuptools python-pip)				#required packages are stored in the "requiered" array
 echo "Checking for prerequisites"
 for i in "${required[@]}"			#start checking
 do
@@ -82,7 +83,8 @@ echo "done checking dependencies"
 
 if [ $instl = True ] ; then
     echo "now installing scripts"
-    installAll
+    mkdir /home/pi/robesek
+	installAll
 
 fi
 exit 0
