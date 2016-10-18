@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #variables setup
-instl=False		#created and nullled a variable that tells wherther install mode is on or not
-bld=False			#created and nullled a variable that tells wherther build mode is on or not
-arguments=( "$@" )	#gets all the arguments givven to the script, puts them into an array called "arguments"
-pithonBuildList=("status/status_check.py") #a list of the locations of all the stuff that is to be built, for the RPi, written in python3 (the "i" is intentional) 
+instl=False             #created and nullled a variable that tells wherther install mode is on or not
+bld=False                       #created and nullled a variable that tells wherther build mode is on or not
+arguments=( "$@" )      #gets all the arguments givven to the script, puts them into an array called "arguments"
+pithonBuildList=("status/status_check.py") #a list of the locations of all the stuff that is to be built, for the RPi, written in python3 (the "i" is intentional)
 piBootList=("status/status_check.py") #a list of the locations of all the stuff that is to be executed on boot on the Pi.
 arduinoFlash=("") #here the main arduino sketch's location is stored.
-required=(python3 arduino arduino-core build-essential manpages-dev python-setuptools python-pip)				#required packages are stored in the "requiered" array
+required=(python3 arduino arduino-core build-essential manpages-dev python-setuptools python-pip)                            #required packages are stored in the "requiered" array
 
 #a function that checks if a text is an element of the arguments array
 containsArgument () {
@@ -19,10 +19,10 @@ containsArgument () {
     fi
 }
 
-checkRoot () {				#check if the script is run as root
-    if [ "$(id -u)" != "0" ]; then				
-	    echo "You are not root. Please run this script with "sudo" in front of it"
-	    exit 1
+checkRoot () {                          #check if the script is run as root
+    if [ "$(id -u)" != "0" ]; then
+            echo "You are not root. Please run this script with "sudo" in front of it"
+            exit 1
     fi
 }
 
@@ -36,16 +36,20 @@ bootListContains () {
 }
 
 installAll () {
-	for script in "${pithonBuildList[@]}"			#Get all the stuff that is to be built
-		do
-		local dir="$(dirname $script)"
-		cp -R $dir /home/pi/robesek/
-		echo "Building $script"
-		pyinstaller /home/pi/robesek/$scipt
-		if bootListContains $script  ; then		
-		echo "Installing $script now"
-		checkRoot
-	
+preDir=pwd
+        for script in "${pithonBuildList[@]}"                   #Get all the stuff that is to be built
+                do
+                local robesekDir="/home/pi/robesek/${script}" + $script
+                local dir="$(dirname $script)"
+                cd /home/pi/robesek/
+                echo $robesekDir
+                cp -R $dir /home/pi/robesek/
+                echo "Building $script"
+                pyinstaller -F $robesekDir
+                if bootListContains $script  ; then
+                echo "Installing $script now"
+                checkRoot
+                cd $preDir
 fi
 done
 }
@@ -53,28 +57,28 @@ done
 
 
 
-if containsArgument "--install" || containsArgument "-i" ; then		#checks for "install" in the array using the containsArgument function.
+if containsArgument "--install" || containsArgument "-i" ; then     #checks for "install" in the array using the containsArgument function.
     instl=True
 elif containsArgument "--build" || containsArgument "-b" ; then
     bld=True
 elif containsArgument "--all" || containsArgument "-a" ; then
     bld=True
-	inst=True
-	#TODO: add checking for "all", "arduino", "raspberry", "status_check"
+        inst=True
+        #TODO: add checking for "all", "arduino", "raspberry", "status_check"
 else
-    echo "Incorrect syntax, correct syntax is ..."	#If no argument is passed, display correct syntax and exit
+    echo "Incorrect syntax, correct syntax is ..."      #If no argument is passed, display correct syntax and exit
     exit 1
 fi
 
 
 #checks for required packages and installs them if they are missing
 echo "Checking for prerequisites"
-for i in "${required[@]}"			#start checking
+for i in "${required[@]}"                       #start checking
 do
 echo "Checking for $i"
-if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq 0 ]; then		#asks dpkg wherther the package is install
+if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq 0 ]; then           #asks dpkg wherther the package is install
     echo "$i is not installed, attempting to install it now"
-	checkRoot			#if a package is missing and script is not run as root
+        checkRoot                       #if a package is missing and script is not run as root
     apt-get update && apt-get -y install $i
 fi
 done
@@ -84,7 +88,7 @@ echo "done checking dependencies"
 if [ $instl = True ] ; then
     echo "now installing scripts"
     mkdir /home/pi/robesek
-	installAll
+        installAll
 
 fi
 exit 0
