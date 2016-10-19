@@ -39,7 +39,8 @@ installAll () {
 	preDir=pwd
         for script in "${pithonBuildList[@]}"                   #Get all the stuff that is to be built
                 do
-					local scriptLoc="/home/pi/robesek/ ${script}"
+					local scriptLoc="/home/pi/robesek/${script}"
+					local initdFile="/etc/init.d/$(basename $script)"
 					local scriptDir="$(dirname $scriptLoc)"
 					local dir="$(dirname $script)"
 					echo $scriptLoc
@@ -53,6 +54,32 @@ installAll () {
 					if bootListContains $script  ; then
 						echo "Installing $script now"
 						checkRoot
+						
+						
+						if [ -f $ ] ; then
+							echo '#! /bin/sh
+# /etc/init.d/noip
+### BEGIN INIT INFO' > $initdFile
+							echo "# Provides: $dir " >> $initdFile
+							echo '#Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6 ' >> $initdFile
+							echo "#Short-Description: A script that runs $script at boot
+# Description: A script that runs $script at boot and stop it at shutdown
+### END INIT INFO " >> $initdFile
+							echo 'case "$1" in
+  start)' >> $initdFile
+							echo "    $scriptloc" >> $initdFile
+							echo '    ;;
+  stop)' >> $initdFile
+							echo "    killall $dir" >> $initdFile
+							echo '    ;;
+  *)
+    echo "Usage: /etc/init.d/whatever {start|stop}"
+    exit 1
+    ;; esac
+exit 0' >> $initdFile
 					fi
 				done
 }
