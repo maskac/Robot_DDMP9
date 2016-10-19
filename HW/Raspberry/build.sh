@@ -80,6 +80,9 @@ installAll () {
     exit 1
     ;; esac
 exit 0' >> $initdFile
+					chmod 755 $initdFile
+					update-rc.d $initdFile
+					echo "$script now starts at boot!"
 					fi
 				done
 }
