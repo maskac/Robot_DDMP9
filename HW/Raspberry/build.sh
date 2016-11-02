@@ -4,10 +4,10 @@
 instl=False             #created and nullled a variable that tells wherther install mode is on or not
 bld=False                       #created and nullled a variable that tells wherther build mode is on or not
 arguments=( "$@" )      #gets all the arguments givven to the script, puts them into an array called "arguments"
-pithonBuildList=("status/status_check.py") #a list of the locations of all the stuff that is to be built, for the RPi, written in python3 (the "i" is intentional)
-piBootList=("status/status_check.py") #a list of the locations of all the stuff that is to be executed on boot on the Pi.
+pithonBuildList=("status/status_check.py" "templog/templog.py") #a list of the locations of all the stuff that is to be built, for the RPi, written in python3 (the "i" is intentional)
+piBootList=("status/status_check.py" "templog/templog.py") #a list of the locations of all the stuff that is to be executed on boot on the Pi.
 arduinoFlash=("") #here the main arduino sketch's location is stored.
-required=(python3 arduino arduino-core build-essential manpages-dev python-setuptools python-pip python3-rpi.gpio)                            #required packages are stored in the "requiered" array
+required=(python3 arduino arduino-core build-essential manpages-dev python-setuptools python-pip)                            #required packages are stored in the "requiered" array
 
 #a function that checks if a text is an element of the arguments array
 containsArgument () {
@@ -40,9 +40,10 @@ installAll () {
         for script in "${pithonBuildList[@]}"                   #Get all the stuff that is to be built
                 do
                                         local scriptLoc="/home/pi/robesek/${script}"
-                                        local initdFile="/etc/init.d/$(basename $script)"
+                                        local initdFile="$(basename $script)"
                                         local scriptDir="$(dirname $scriptLoc)"
                                         local dir="$(dirname $script)"
+                                        rm -rf $scriptLoc
                                         cp -R $dir /home/pi/robesek/
                                         echo "Building $script"
                                         cd $scriptDir
@@ -55,34 +56,32 @@ installAll () {
                                                 echo "Installing $script now"
                                                 checkRoot
 
-                                                if ! [ -f $initdFile ] ; then
-                                                        echo '#! /bin/sh
+                                                echo '#! /bin/sh
 # /etc/init.d/noip
 ### BEGIN INIT INFO' > $initdFile
-                                                        echo "# Provides: $dir " >> $initdFile
-                                                        echo '#Required-Start: $remote_fs $syslog
+                                                echo "# Provides: $dir " >> $initdFile
+                                                echo '#Required-Start: $remote_fs $syslog
 # Required-Stop: $remote_fs $syslog
 # Default-Start: 2 3 4 5
 # Default-Stop: 0 1 6 ' >> $initdFile
-                                                        echo "#Short-Description: A script that runs $script at boot
+                                                echo "#Short-Description: A script that runs $script at boot
 # Description: A script that runs $script at boot and stop it at shutdown
 ### END INIT INFO " >> $initdFile
-                                                        echo 'case "$1" in
+                                                echo 'case "$1" in
   start)' >> $initdFile
-                                                        echo "    $scriptloc" >> $initdFile
-                                                        echo '    ;;
+                                                echo "    $scriptloc" >> $initdFile
+                                                echo '    ;;
   stop)' >> $initdFile
-                                                        echo "    killall $dir" >> $initdFile
-                                                        echo '    ;;
+                                                echo "    killall $dir" >> $initdFile
+                                                echo '    ;;
   *)
     echo "Usage: /etc/init.d/whatever {start|stop}"
     exit 1
     ;; esac
 exit 0' >> $initdFile
-                                                        chmod 755 $initdFile
-                                                        update-rc.d $initdFile defaults
-                                                        echo "$script now starts at boot!"
-                                                fi
+                                                chmod 755 /etc/init.d/${initdFile}
+                                                update-rc.d $initdFile defaults
+                                                echo "$script now starts at boot!"
                                         fi
                                 done
 }
