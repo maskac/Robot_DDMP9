@@ -4,8 +4,8 @@ import os
 import glob
 import time
 
-global temp = 0 
-global crc = 0
+temp = 0 
+crc = 0
 
 
 os.system('modprobe w1-gpio')
@@ -14,13 +14,13 @@ os.system('modprobe w1-therm')
 base_dir = '/sys/bus/w1/devices/'
 deviceFolders = [glob.glob(base_dir + '28-xxx'), glob.glob(base_dir + '28-xxxx'), glob.glob(base_dir + '28-xxxxx')]
 device_file = device_folder + '/w1_slave'
- 
+
 def read_temp_raw():
     f = open(device_file, 'r')
     lines = f.readlines()
     f.close()
     return lines
- 
+
 def logTempo():
     lines = read_temp_raw()
     equals_pos = lines[1].find('t=')
@@ -36,25 +36,25 @@ def getVars():
     if equals_pos != -1:
         temp_string = lines[1][equals_pos+2:]
         temp = float(temp_string) / 1000.0
-	
-	equals_pos = lines[1].find('crc=')
+        
+        equals_pos = lines[1].find('crc=')
     if equals_pos != -1:
         temp_string = lines[1][equals_pos+2:]
         crc = float(temp_string) / 1000.0
-	
-	unixtime = int(time.time())
-	date = 
-    time = 
-	
+        
+        unixtime = int(time.time())
+        date = 1
+        time = 2
+
 
 def logTemp():
-	getVars
-	
-	
-	
-	
+    getVars
 
-		
+
+
+
+
+
 while True:
-	logTemp()	
-	time.sleep(1)
+    logTemp()
+    time.sleep(1)
