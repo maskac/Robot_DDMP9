@@ -35,7 +35,7 @@ def getDCtemp():
     if equals_pos != -1:
         temp_string = lines[1][equals_pos+2:]
         temp = float(temp_string) / 1000.0
-        
+#Get checksum (unused) and returns the float        
         equals_pos = lines[1].find('crc=')
     if equals_pos != -1:
         crc_string = lines[1][equals_pos+2:]
