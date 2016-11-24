@@ -17,8 +17,10 @@ def get_RSSI():
     return int(signal)
 
 def get_signal_level(cell):
-    return matching_line(cell,"Quality=").split("Signal level=")[1] #Signal level is on the same line as Quality. Síla signálu je na stejném řádku jako kvalita.
-
+    level = matching_line(cell,"Quality=").split("Signal level=")[1] #Signal level is on the same line as Quality. Síla signálu je na stejném řádku jako kvalita.
+    level = level.split()[0].split('/')
+    return str(int(round(float(level[0]) / float(level[1]) * 100)))
+    
 def matching_line(lines, keyword):
     """Returns the first matching line in a list of lines. See match()
        Vrátí první řádek, který začíná na keyword. Viz match()"""
