@@ -1,0 +1,8 @@
+
+
+raspberry   |   | axdl345
+
+   pin1 3.3V  <->  VCC , CS
+   pin3 SDA   <->  SDA
+   pin5 SCL   <->  SCL
+   pin6 GND   <->  GND , SDO
