@@ -39,6 +39,7 @@ def getDCtemp():
         equals_pos = lines[1].find('crc=')
     if equals_pos != -1:
         crc_string = lines[1][equals_pos+2:]
-        crc = float(crc_string)
-    return(temp)    
+        #crc = float(crc_string)  -  Fakt naprd
+        
+    return(temp, crc_string)    
 
