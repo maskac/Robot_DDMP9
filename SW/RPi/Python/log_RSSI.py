@@ -14,12 +14,12 @@ def get_RSSI():
     cell_line = match(out.split("\n")[0],"Cell ")
     line = cell_line[-27:]
     signal = get_signal_level(line)
-    return int(signal)
+    return signal
 
 def get_signal_level(cell):
     level = matching_line(cell,"Quality=").split("Signal level=")[1] #Signal level is on the same line as Quality. Síla signálu je na stejném řádku jako kvalita.
     level = level.split()[0].split('/')
-    return str(int(round(float(level[0]) / float(level[1]) * 100)))
+    return int(round(float(level[0]) / float(level[1]) * 100))
     
 def matching_line(lines, keyword):
     """Returns the first matching line in a list of lines. See match()
@@ -41,4 +41,3 @@ def match(line,keyword):
         return line[length:]
     else:
         return None
-
