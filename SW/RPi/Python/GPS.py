@@ -13,7 +13,7 @@ def souradnice():
   
 def nad_morska_vyska():
   veta = GPS() # zjištění věty
-  if (veta[10] == M): # zjištění jestli je jednotka v metrech
+  if (veta[10] == "M"): # zjištění jestli je jednotka v metrech
     mnm = veta[9]
     return mnm # vrácení nadmořské výšky
   
