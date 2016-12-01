@@ -14,5 +14,15 @@ def souradnice():
 def nad_morska_vyska():
   veta = GPS() # zjištění věty
   if (veta[10] == M): # zjištění jestli je jednotka v metrech
-    mnm = veta[11]
+    mnm = veta[9]
     return mnm # vrácení nadmořské výšky
+  
+def kvalita_signalu_GPS():
+  veta = GPS() # zjištění věty
+  kval = veta[6]
+  return kval # vrácení kvality signálu GPS
+
+def pocet_satelitu():
+  veta = GPS() # zjištění věty
+  satel = veta[7]
+  return satel # vrácení poctu viditelnych satelitu
