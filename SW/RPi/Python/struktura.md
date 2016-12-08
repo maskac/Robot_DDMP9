@@ -6,7 +6,7 @@ Log.py načte všechny programy (log_RSSI.py, GPS.py, a teploty). Z každého pr
 + Ostatní metody jsou pomocné.
 
 ## GPS
-+ PS() slouží k získání informací - pomocná.
++ GPS() slouží k získání informací - pomocná.
 + souradnice() vrací souradnice v poli ( šířka, N nebo S, délka, E nebo W )
 + nad_morska_vyska() vrací nadmořskou výšku
 + kvalita_signalu_GPS() vrací kvalitu signálu
@@ -15,5 +15,8 @@ Log.py načte všechny programy (log_RSSI.py, GPS.py, a teploty). Z každého pr
 ## Teplota CPU
 není k dispozici
 
-## Teplota senzoru
-není k dispozici
+## Teplota DC senzoru
++ GetDCtemp() vrací teplotu jako float v tuplu s crc jako string
+
+## ADXL345 (akcelerometr)
++ getAxes(self,gforce=False) vrací zrychlení x, y, z jako dictionary {"x":x"y":y"z":z}
