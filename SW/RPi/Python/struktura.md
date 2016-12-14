@@ -1,4 +1,4 @@
-# Struktura logování
+,# Struktura logování
 Log.py načte všechny programy (log_RSSI.py, GPS.py, a teploty). Z každého programu zavolá hlavní metodu (get_RSSI(), souradnice(), ...) a výsledky zapíše s datem do souboru.
 
 ## RSSI
@@ -19,4 +19,4 @@ není k dispozici
 + GetDCtemp() vrací teplotu jako float v tuplu s crc jako string
 
 ## ADXL345 (akcelerometr)
-+ getAxes(self,gforce=False) vrací zrychlení x, y, z jako dictionary {"x":x"y":y"z":z}
++ getAxes(self,gforce=False) vrací zrychlení x, y, z jako dictionary {"x":x,"y":y,"z":z}
