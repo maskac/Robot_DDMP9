@@ -1,5 +1,5 @@
 # Struktura logování
-Log.py načte všechny programy (log_RSSI.py, GPS.py, a teploty). Z každého programu zavolá hlavní metodu (get_RSSI(), souradnice(), ...) a výsledky zapíše s datem do souboru.
+Log.py načte všechny programy (log_RSSI.py, GPS.py, a teploty). Z každého programu zavolá hlavní metodu (get_RSSI(), souradnice(), ...) a výsledky zapíše s datem do souboru log.txt (lze změnit).
 
 ## RSSI
 + get_RSSI() vrátí sílu signálu jako int.
