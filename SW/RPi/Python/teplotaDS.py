@@ -7,10 +7,9 @@
 #"ROBESEK TS1",date,time,unixtimestamp,temperature,crc
 
 
-#import os
-#import glob
-#import time
-#Imports in main file
+import os
+import glob
+import time
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
@@ -18,10 +17,6 @@ os.system('modprobe w1-therm')
 DCbase_dir = '/sys/bus/w1/devices/'
 DCdevice_folder = glob.glob(base_dir + '28*')[0]
 DCdevice_file = device_folder + '/w1_slave'
-
-
-
-
 
 def getDCtemp():
 #read raw temp
