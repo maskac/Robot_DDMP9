@@ -13,7 +13,7 @@ Log.py načte všechny programy (log_RSSI.py, GPS.py, a teploty). Z každého pr
 + pocet_satelitu() vrací pocet satelitu
 
 ## Teplota CPU
-+ CPUtemp() vrací teplotu jako int, v °C
++ getCPUtemperature() vrací teplotu jako int, v °C
 
 ## Teplota DC senzoru
 + GetDCtemp() vrací teplotu jako float v tuplu s crc jako string
