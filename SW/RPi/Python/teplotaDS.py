@@ -11,30 +11,32 @@ import os
 import glob
 import time
 
-os.system('modprobe w1-gpio')
-os.system('modprobe w1-therm')
- 
+os.system('sudo modprobe w1-gpio')
+os.system('sudo modprobe w1-therm')
+
 DCbase_dir = '/sys/bus/w1/devices/'
-DCdevice_folder = glob.glob(base_dir + '28*')[0]
-DCdevice_file = device_folder + '/w1_slave'
+DCdevice_folder = glob.glob(DCbase_dir+"28*")[0]
+DCdevice_file = DCdevice_folder + '/w1_slave'
 
 def getDCtemp():
 #read raw temp
     f = open(DCdevice_file, 'r')
     lines = f.readlines()
     f.close()
-    return lines
-    
-#Get float °C
+
+    crc_string=""
+
     equals_pos = lines[1].find('t=')
     if equals_pos != -1:
         temp_string = lines[1][equals_pos+2:]
         temp = float(temp_string) / 1000.0
-#Get checksum (unused) and returns the float        
+#Get checksum (unused) and returns the float
         equals_pos = lines[1].find('crc=')
     if equals_pos != -1:
         crc_string = lines[1][equals_pos+2:]
         #crc = float(crc_string)  -  Fakt naprd
-        
-    return(temp, crc_string)    
 
+    return(temp, crc_string)
+
+if (__name__=="__main__"):
+    print(getDCtemp())
