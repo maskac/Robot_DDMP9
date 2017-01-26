@@ -1,0 +1,10 @@
+senzor 1(levý ve smìru jízdy): 
+Vcc- +5V (šedý)
+Trig- 23 (modrý)
+Echo- 22 (fialový)
+GND- GND (zelený)
+senzor 2(pravý ve smìru jízdy): 
+Vcc- +5V (žlutý)
+Trig- 25 (béžový)
+Echo- 24 (èervený)
+GND- GND (hnìdý)
