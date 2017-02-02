@@ -1,0 +1,3 @@
+zapojeni gps:
+zeleny - pin 8
+fialovy - pin 10
