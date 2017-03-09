@@ -28,3 +28,6 @@ Načte akcelerometr a odešle na MQTT (v plánu)
 
 ## ADXL345 (akcelerometr)
 + getAxes(self,gforce=False) vrací zrychlení x, y, z jako dictionary {"x":x,"y":y,"z":z}
+
+## ina219
++ Získá hodnotu senzoru ina219
