@@ -39,6 +39,7 @@ def log_fast():
   log_string = ""
   accel = acc()
   log_string += str(adxl["x"]) + "," + str(adxl["y"]) + "," + str(adxl["z"])
+  print(log_string)
 
 def date():
   return str(datetime.now()).replace(" ", ",").split(".")[0]
@@ -61,17 +62,12 @@ def temp_cpu():
 
 def temp_ds():
   return teplotaDS.getDCtemp()
-#dc_t = str(temp[0]) + "," + temp[1]
 
 def rssi():
   return str(log_RSSI.get_RSSI())
 
 def acc():
   return adxl345.ADXL345().getAxes()
-
-#acc = str(adxl["x"]) + "," + str(adxl["y"]) + "," + str(adxl["z"])
-
-#return log_string
 
 if (__name__=="__main__"):
   log_all()
