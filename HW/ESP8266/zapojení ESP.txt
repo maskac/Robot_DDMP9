@@ -1,0 +1,7 @@
+zapojeni ESP
+
+ESP		ARDUINO
+VCC >		5V
+GND >		GND
+TX  >		RX
+RX  >		TX
