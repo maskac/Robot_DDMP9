@@ -3,11 +3,13 @@ import GPS
 import adxl345
 import log_RSSI
 import teplotaDS
+import ina219
 from datetime import datetime
 
 log_file = "log.txt"
 
-#Log file format: date,souradnice,nadmorska_vyska,pocet_sat_GPS, kvalita_sig_GPS,teplota_cpu,teplote_senzoru_DS,rssi,akcelerometr
+#Log file format: datum,souradnice,nadmorska_vyska,pocet_sat_GPS, kvalita_sig_GPS,teplota_cpu,senzor_ina219,teplote_senzoru_DS,rssi,
+#akcelerometr
 
 def log_all():
   log_string = ""
@@ -16,9 +18,10 @@ def log_all():
   log_string += gps_ps() + ","
   log_string += gps_kval() + ","
   log_string += temp_cpu() + ","
+  log_string += str(ina219.i2c()) + ","
   
   ds = temp_ds()
-  if ds[1] == "": #V pripade dobreho crc
+  if ds[1] == "": #V pripade dobreho crc ulozi teplotu
     log_string += ds[0] + ","
   else:#Kdyz ne ulozi chybu
     log_string += "DSError,"
