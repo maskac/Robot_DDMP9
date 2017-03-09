@@ -1,5 +1,13 @@
 # Struktura logování
-Log.py načte všechny programy (log_RSSI.py, GPS.py, a teploty). Z každého programu zavolá hlavní metodu (get_RSSI(), souradnice(), ...) a výsledky zapíše s datem do souboru log.txt (lze změnit).
+
+## Logger.py
+Volá log.log_all každých 5 sekund a log.log_fast každou sekundu.
+
+## Log.py
+### log_all
+Načte všechny programy (log_RSSI.py, GPS.py, a teploty). Z každého programu zavolá hlavní metodu (get_RSSI(), souradnice(), ...) a výsledky zapíše s datem do souboru log.txt (lze změnit). Výsledky odešle na MQTT (v plánu).
+### log_fast
+Načte akcelerometr a odešle na MQTT (v plánu)
 
 ## RSSI
 + get_RSSI() vrátí sílu signálu jako int.
