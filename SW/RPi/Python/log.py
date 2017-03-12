@@ -5,11 +5,17 @@ import log_RSSI
 import teplotaDS
 import ina219
 from datetime import datetime
+import paho.mqtt.publish as iot
 
+#Konstanty:
 log_file = "log.txt"
+server_IP = "iot.eclipse.org"
+topic = "r.o.b.e.s.e.k/16-17"
 
-#Log file format: datum,souradnice,nadmorska_vyska,pocet_sat_GPS, kvalita_sig_GPS,teplota_cpu,senzor_ina219,teplote_senzoru_DS,rssi,
-#akcelerometr
+#Log soubor format: datum,souradnice,nadmorska_vyska,pocet_sat_GPS, kvalita_sig_GPS,teplota_cpu,ina219,teplote_senzoru_DS,rssi,akcelerometr
+#MQTT format - log_all: "all:souradnice,nadmorska_vyska,pocet_sat_GPS, kvalita_sig_GPS,teplota_cpu,ina219,teplote_senzoru_DS,rssi,akcelerometr"
+#MQTT format - log_fast: "fast:akcelerometr,ina219"
+
 
 def log_all():
   log_string = ""
@@ -27,22 +33,28 @@ def log_all():
     log_string += "DSError,"
   log_string += rssi() + ","
   accel = acc()
-  log_string += str(adxl["x"]) + "," + str(adxl["y"]) + "," + str(adxl["z"])
+  log_string += str(adxl["x"]) + "," + str(adxl["y"]) + "," + str(adxl["z"]) + ","
   
   log_string = date() + log_string + "\n" #Cas na konec kdyby to slo pomalu
   
+  #Pro otestovani
   print(log_string)
   
-  #Odkomentovat az bude otestovano
-  #writer = open(log_file,"a")
-  #writer.write(log_string)
-  #writer.close()
+  iot.single(topic, log_string, 0, false, server_IP)
+  writer = open(log_file,"a")
+  writer.write(log_string)
+  writer.close()
 
 def log_fast():
   log_string = ""
   accel = acc()
-  log_string += str(adxl["x"]) + "," + str(adxl["y"]) + "," + str(adxl["z"])
+  log_string += str(adxl["x"]) + "," + str(adxl["y"]) + "," + str(adxl["z"]) 
+  log_string += str(ina219.i2c())
+  
+  #Pro otestovani:
   print(log_string)
+  
+  iot.single(topic, log_string, 0, false, server_IP)
 
 def date():
   return str(datetime.now()).replace(" ", ",").split(".")[0]
