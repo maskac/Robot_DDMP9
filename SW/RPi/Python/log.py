@@ -34,13 +34,14 @@ def log_all():
   log_string += rssi() + ","
   accel = acc()
   log_string += str(adxl["x"]) + "," + str(adxl["y"]) + "," + str(adxl["z"]) + ","
-  
+
+  iot.single(topic, "all:" + log_string, 0, false, server_IP)
+
   log_string = date() + log_string + "\n" #Cas na konec kdyby to slo pomalu
   
   #Pro otestovani
   print(log_string)
   
-  iot.single(topic, log_string, 0, false, server_IP)
   writer = open(log_file,"a")
   writer.write(log_string)
   writer.close()
@@ -54,7 +55,7 @@ def log_fast():
   #Pro otestovani:
   print(log_string)
   
-  iot.single(topic, log_string, 0, false, server_IP)
+  iot.single(topic, "fast:" + log_string, 0, false, server_IP)
 
 def date():
   return str(datetime.now()).replace(" ", ",").split(".")[0]
