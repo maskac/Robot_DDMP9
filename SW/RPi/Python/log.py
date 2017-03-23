@@ -33,9 +33,9 @@ def log_all():
     log_string += "DSError,"
   log_string += rssi() + ","
   accel = acc()
-  log_string += str(adxl["x"]) + "," + str(adxl["y"]) + "," + str(adxl["z"]) + ","
+  log_string += str(accel["x"]) + "," + str(accel["y"]) + "," + str(accel["z"]) + ","
 
-  iot.single(topic, "all:" + log_string, 0, false, server_IP)
+  iot.single(topic, "all:" + log_string, 0, False, server_IP)
 
   log_string = date() + log_string + "\n" #Cas na konec kdyby to slo pomalu
   
@@ -49,13 +49,13 @@ def log_all():
 def log_fast():
   log_string = ""
   accel = acc()
-  log_string += str(adxl["x"]) + "," + str(adxl["y"]) + "," + str(adxl["z"]) 
+  log_string += str(accel["x"]) + "," + str(accel["y"]) + "," + str(accel["z"]) + ","
   log_string += str(ina219.i2c())
   
   #Pro otestovani:
   print(log_string)
   
-  iot.single(topic, "fast:" + log_string, 0, false, server_IP)
+  iot.single(topic, "fast:" + log_string, 0, False, server_IP)
 
 def date():
   return str(datetime.now()).replace(" ", ",").split(".")[0]
