@@ -9,7 +9,7 @@ import paho.mqtt.publish as iot
 
 #Konstanty:
 log_file = "log.txt"
-server_IP = "local"
+server_IP = "192.168.212.57" # Jen local nestaci
 topic_gps_sou = "GPS/sour"
 topic_gps_nm = "GPS/nadm"
 topic_gps_ps = "GPS/ps"
@@ -33,7 +33,7 @@ def log_all():
   ina = str(ina219.i2c())
   ds = temp_ds()
   if ds[1] == "": #V pripade dobreho crc ulozi teplotu
-    ds = ds[0]
+    ds = str(ds[0])
   else:#Kdyz ne ulozi chybu
     ds = "DSError,"
   accel = acc()
