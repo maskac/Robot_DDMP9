@@ -33,9 +33,9 @@ def log_all():
   ina = str(ina219.i2c())
   ds = temp_ds()
   if ds[1] == "": #V pripade dobreho crc ulozi teplotu
-    log_string += ds[0] + ","
+    ds = ds[0]
   else:#Kdyz ne ulozi chybu
-    log_string += "DSError,"
+    ds = "DSError,"
   accel = acc()
   str_accel = str(accel["x"]) + "," + str(accel["y"]) + "," + str(accel["z"]) 
   rssi = get_rssi()
