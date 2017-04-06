@@ -9,34 +9,60 @@ import paho.mqtt.publish as iot
 
 #Konstanty:
 log_file = "log.txt"
-server_IP = "iot.eclipse.org"
-topic = "r.o.b.e.s.e.k/16-17"
+server_IP = "local"
+topic_gps_sou = "GPS/sour"
+topic_gps_nm = "GPS/nadm"
+topic_gps_ps = "GPS/ps"
+topic_gps_kval = "GPS/sour"
+topic_temp_cpu = "temp/CPU"
+topic_temp_ds = "temp/DS"
+topic_ina = "ina219"
+topic_rssi = "rssi"
+topic_acc = "acc"
 
 #Log soubor format: datum,souradnice,nadmorska_vyska,pocet_sat_GPS, kvalita_sig_GPS,teplota_cpu,ina219,teplote_senzoru_DS,rssi,akcelerometr
-#MQTT format - log_all: "all:souradnice,nadmorska_vyska,pocet_sat_GPS, kvalita_sig_GPS,teplota_cpu,ina219,teplote_senzoru_DS,rssi,akcelerometr"
-#MQTT format - log_fast: "fast:akcelerometr,ina219"
 
 
 def log_all():
-  log_string = ""
-  log_string += gps_sou() + ","
-  log_string += gps_nm() + ","
-  log_string += gps_ps() + ","
-  log_string += gps_kval() + ","
-  log_string += temp_cpu() + ","
-  log_string += str(ina219.i2c()) + ","
-  
+  #Nacteme vsechny informace
+  sour = gps_sou()
+  nm = gps_nm()
+  ps = gps_ps()
+  kval = gps_kval()
+  cpu = temp_cpu()
+  ina = str(ina219.i2c())
   ds = temp_ds()
   if ds[1] == "": #V pripade dobreho crc ulozi teplotu
     log_string += ds[0] + ","
   else:#Kdyz ne ulozi chybu
     log_string += "DSError,"
-  log_string += rssi() + ","
   accel = acc()
-  log_string += str(accel["x"]) + "," + str(accel["y"]) + "," + str(accel["z"]) + ","
-
-  iot.single(topic, "all:" + log_string, 0, False, server_IP)
-
+  str_accel = str(accel["x"]) + "," + str(accel["y"]) + "," + str(accel["z"]) 
+  rssi = get_rssi()
+  
+  #Vytvorit pole zprav aby se daly odeslat naraz
+  msgs = [(topic_gps_sou, sour, 0, False),
+         (topic_gps_nm, nm, 0, False),
+         (topic_gps_ps, ps, 0, False),
+         (topic_gps_kval, kval, 0, False),
+         (topic_temp_cpu, cpu, 0, False),
+         (topic_temp_ds, ds, 0, False),
+         (topic_ina, ina, 0, False),
+         (topic_rssi, rssi, 0, False),
+         (topic_acc, str_accel, 0, False)]
+  
+  iot.multiple(msgs, server_IP)
+  
+  log_string = ""
+  log_string += sour + ","
+  log_string += nm + ","
+  log_string += ps + ","
+  log_string += kval + ","
+  log_string += cpu + ","
+  log_string += ina + ","
+  log_string += ds + ","
+  log_string += rssi + ","
+  log_string += str_accel + ","
   log_string = date() + log_string + "\n" #Cas na konec kdyby to slo pomalu
   
   #Pro otestovani
@@ -47,15 +73,18 @@ def log_all():
   writer.close()
 
 def log_fast():
-  log_string = ""
   accel = acc()
-  log_string += str(accel["x"]) + "," + str(accel["y"]) + "," + str(accel["z"]) + ","
-  log_string += str(ina219.i2c())
-  
+  str_accel= str(accel["x"]) + "," + str(accel["y"]) + "," + str(accel["z"]) + ","
+  ina = str(ina219.i2c())
+
   #Pro otestovani:
-  print(log_string)
-  
-  iot.single(topic, "fast:" + log_string, 0, False, server_IP)
+  print(ina + "," + str_accel)
+
+  msgs = [(topic_ina, ina, 0, False),
+         (topic_acc, str_accel, 0, False)]
+
+  #Vytvorit pole zprav aby se daly odeslat naraz
+  iot.multiple(msgs, server_IP)
 
 def date():
   return str(datetime.now()).replace(" ", ",").split(".")[0]
@@ -79,7 +108,7 @@ def temp_cpu():
 def temp_ds():
   return teplotaDS.getDCtemp()
 
-def rssi():
+def get_rssi():
   return str(log_RSSI.get_RSSI())
 
 def acc():
