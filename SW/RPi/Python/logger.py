@@ -12,5 +12,5 @@ def log_fast():
   log.log_fast()
 
 #Nastartuje cyklus
-log_all()
 Timer(1, log_fast, ()).start()
+log_all()
