@@ -54,8 +54,8 @@ def log_all():
          (topic_gps_kval, kval, 0, False),
          (topic_temp_cpu, cpu, 0, False),
          (topic_temp_ds, ds, 0, False),
-         (topic_ina_bv, str(round(ina[0], 1)), 0, False),
-         (topic_ina_bc, str(round(ina[1], 2)), 0, False),
+         (topic_ina_bv, str(round(ina[0], 2)), 0, False),
+         (topic_ina_bc, str(round(ina[1], 1)), 0, False),
          (topic_ina_p, str(round(ina[2], 1)), 0, False),
          (topic_ina_sv, str(round(ina[3], 1)), 0, False),
          (topic_rssi, rssi, 0, False),
@@ -82,8 +82,8 @@ def log_fast():
   #Pro otestovani:
   print(str(ina[0]) + "," + str(ina[1]) + "," + str(ina[2]) + "," + str(ina[3]) + "," + str_accel)
 
-  msgs = [(topic_ina_bv, str(round(ina[0], 1)), 0, False),
-         (topic_ina_bc, str(round(ina[1], 2)), 0, False),
+  msgs = [(topic_ina_bv, str(round(ina[0], 2)), 0, False),
+         (topic_ina_bc, str(round(ina[1], 1)), 0, False),
          (topic_ina_p, str(round(ina[2], 1)), 0, False),
          (topic_ina_sv, str(round(ina[3], 1)), 0, False),
          (topic_acc_x, str(accel["x"]), 0, False),
