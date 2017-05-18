@@ -65,10 +65,7 @@ def log_all():
 
   iot.multiple(msgs, server_IP, server_port, client_ID)
 
-  log_string = date() + "," + sour + "," + nm + "," + ps + "," + kval + "," + cpu + "," + str(ina[0]) + "," + str(ina[1]) + "," + str(ina[2]) + "," + str(ina[3]) + "," + ds + "," + rssi + "," + str_accel
-
-  #Pro otestovani
-  print(log_string)
+  log_string = date() + "," + sour + "," + nm + "," + ps + "," + kval + "," + cpu + "," + str(ina[0]) + "," + str(ina[1]) + "," + str(ina[2]) + "," + str(ina[3]) + "," + ds + "," + rssi + "," + str_accel + "\n"
 
   writer = open(log_file,"a")
   writer.write(log_string)
@@ -78,9 +75,6 @@ def log_fast():
   accel = acc()
   str_accel= str(accel["x"]) + "," + str(accel["y"]) + "," + str(accel["z"])
   ina = ina219.read()
-
-  #Pro otestovani:
-  print(str(ina[0]) + "," + str(ina[1]) + "," + str(ina[2]) + "," + str(ina[3]) + "," + str_accel)
 
   msgs = [(topic_ina_bv, str(round(ina[0], 2)), 0, False),
          (topic_ina_bc, str(round(ina[1], 1)), 0, False),
