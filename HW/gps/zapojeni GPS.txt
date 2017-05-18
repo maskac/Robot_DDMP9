@@ -1,3 +1,4 @@
 zapojeni gps:
-zeleny - pin 8
-fialovy - pin 10
+Raspberry            GPS
+GIPO14    >zeleny>   pin 8
+GIPO15    >fialovy>  pin 10

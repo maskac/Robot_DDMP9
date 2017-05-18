@@ -1,7 +1,8 @@
 zapojeni ESP
 
-ESP		ARDUINO
-VCC >		5V
-GND >		GND
-TX  >		RX
-RX  >		TX
+ESP	            	ARDUINO
+
+VCC >fialova>	  	5V
+GND >seda>	     	GND
+TX  >cervena>	  	RX3
+RX  >oranzova>		TX3

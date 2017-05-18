@@ -1,10 +1,13 @@
 senzor 1(levy ve smeru jizdy): 
-Vcc- +5V (seda)
-Trig- 23 (modra)
-Echo- 22 (fialova)
-GND- GND (zelena)
-senzor 2(pravy ve smeru jizdy): 
-Vcc- +5V (zluta)
-Trig- 25 (bezova)
-Echo- 24 (cervena)
-GND- GND (hneda)
+
+senzor  Arduino
+Vcc-    +5V (seda)
+Trig-    23 (modra)
+Echo-    22 (fialova)
+GND-     GND (zelena)
+
+senzor 2  (pravy ve smeru jizdy): 
+Vcc-   +5V (zluta)
+Trig-    25 (bezova)
+Echo-   24 (cervena)
+GND-     GND (hneda)
