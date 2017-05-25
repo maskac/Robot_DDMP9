@@ -1,0 +1,4 @@
+senzor bude zapojen do portù:
+gnd a VVC do portù power
+Trig a Echo budou mít každý svùj port (5 senzorù*2pøipojení=bude potøeba celkem 10 pinù)
+vše také na nákresu...
