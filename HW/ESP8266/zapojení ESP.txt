@@ -1,8 +1,11 @@
 zapojeni ESP
 
-ESP	            	ARDUINO
+ESP	            	Power
 
 VCC >fialova>	  	5V
 GND >seda>	     	GND
+
+ESP	            	ARDUINO
+
 TX  >cervena>	  	RX3
 RX  >oranzova>		TX3
