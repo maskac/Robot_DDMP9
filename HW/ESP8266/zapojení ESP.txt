@@ -1,0 +1,8 @@
+zapojeni ESP
+
+ESP	            	ARDUINO
+
+VCC >fialova>	  	5V
+GND >seda>	     	GND
+TX  >cervena>	  	RX3
+RX  >oranzova>		TX3
