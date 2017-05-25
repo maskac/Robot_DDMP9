@@ -1,0 +1,3 @@
+zapojeni senzoru:INA219 do I2C
+V-0x01
+A-0x04
