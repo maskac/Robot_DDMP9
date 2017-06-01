@@ -3,7 +3,7 @@ import log
 import os
 import sys
 
-shut_file = "/tmp/shut"
+shut_file = "/tmp/shutloggerpi"
 pid_file = "/home/pi/test/pid"
 
 writer = open(pid_file, 'w')
