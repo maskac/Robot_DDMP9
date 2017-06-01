@@ -1,0 +1,27 @@
+dokumenace
+Funkce částí
+1:arduino-žízení motorů  
+2:esp8266-nuzové zastvení v připadě  nárazu + hlídání stavu baterie
+3:raspberry-síŤová komunikce + kamery +gps + nuzové zastvení v připadě odpojení žídícího zařízení
+řízení -wifi
+hartbeat-pomocí ping  -pingování ovladče - v připadě neodpovědění do něaké doby  okamžité zastavení robeška 
+packety pro ovládání motorů
+/
+
+{
+on=0 or 1 -zapnutí nobo vypnutí motoru
+acses=hdkeidn123456 -ověřovací klíč
+}
+packety pro ovládání motoru u kamery
+{
+plohaorcas=1 or 0 -> 1 zapnout motor dakud nepříde packet pro vypnutí 0 tastvit na předefinovnou pozici
+on=1 or 0 ->pouze U  plohaorcas=1
+POLOHA=45 ->pouze U  plohaorcas=0
+acses=hdkeidn123456
+}
+packety pro zažádání teploty atd..
+{
+id=2 -id požadovane hodnoty nApř 2-	 teplota )
+acses=hdkeidn123456
+}
+
