@@ -1,0 +1,10 @@
+Changelog:
+Jobs: [Ard] - Arduino incl. motors, [Ras] - Raspberry incl. camera, GPS etc., [WeF] - web frontend, [WeB] - web backend incl. comm. protocols (if it's not part of Ard or Ras)
+
+x.0:
+    maskac: Added charts
+    sobotkama: Added ASCII charts
+    nightenom: Make this GitHub like a professional one
+    nightenom: Added changelog (x.[gitchangenumber] for git changes and describing files (like charts),
+                                [job].[versions of job].[globalbuildnumber] for R.O.B.E.S.E.K., 
+                                build.[globalbuildnumber] for bumping for a LKWC (last known working configuration))
