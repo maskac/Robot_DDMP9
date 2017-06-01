@@ -1,4 +1,6 @@
 zapojeni gps:
 Raspberry            GPS
-GIPO14    >zeleny>   pin 8
-GIPO15    >fialovy>  pin 10
+GIPO14   (pin 8)  >zeleny>   pin 8
+GIPO15   (pin 10) >fialovy>  pin 10
+3.3 V pwr(pin 1)  >zluty>    pin Vcc
+GND      (pin 6)  >modry>    pin GND
