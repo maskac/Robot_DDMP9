@@ -15,7 +15,7 @@ def log_all():
   if (os.path.exists(shut_file)):
     #os.system("sudo rm " + shut_file)
     sys.exit()
-  Timer(30, log_all, ()).start()
+  Timer(5, log_all, ()).start()
   log.log_all()
 
 # Kazdou sekundu zavola log_fast z log.py
