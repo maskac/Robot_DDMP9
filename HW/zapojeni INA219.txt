@@ -1,0 +1,9 @@
+zapojeni senzoru:
+INA219 prez I2C do raspberry pi
+
+INA219    >  pajeci deska >      raspberry pi
+
+GND       >cerna>   > hneda    >  GND (pin9)
+VCC 3.3V  >bila>    > cervena  >  3.3V PWR (pin17)
+SCL       >seda>    > oranzova >  I2C SCL (pin5)
+SDA       >fialova> > zluta    >  I2C SDA (pin3)
