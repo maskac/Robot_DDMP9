@@ -12,12 +12,12 @@
 case "$1" in
   start)
     echo "Starting script logger.py "
-    python /home/py/test/logger.py & > /dev/null 2>&1
+    python /home/pi/test/logger.py & > /dev/null 2>&1
     echo "logger.py initalized"
     ;;
   stop)
     echo "Stopping script logger.py"
-    touch /tmp/shutloggerpy
+    touch /tmp/shutloggerpi
     PID=$(</home/pi/test/pid)
     while true
     do
