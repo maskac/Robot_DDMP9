@@ -116,6 +116,7 @@ if [ $(dpkg-query -W -f='${Status}' $i 2>/dev/null | grep -c "ok installed") -eq
 fi
 done
 pip install pyinstaller
+pip3 install git+https://github.com/dpallot/simple-websocket-server.git
 echo "done checking dependencies"
 
 if [ $instl = True ] ; then
