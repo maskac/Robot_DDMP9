@@ -259,17 +259,11 @@ void doJob() {
       if(serialOutput == true) SerialRASP.println("09:8x8 matrix: done.");
       break;
     case 12:    // Vertical servo
-      j = jobData.toInt();
-      if(j > 180) j=180;
-      else if(j < 0) j=0;
-      currentValues[1] = j;
+      currentValues[1] = jobData.toInt();
       SetVerticalServo();
       break;
     case 13:    // Horizontal servo
-      j = jobData.toInt();
-      if(j > 180) j=180;
-      else if(j < 55) j=55;
-      currentValues[2] = j;
+      currentValues[2] = jobData.toInt();
       SetHorizontalServo();
       break;
     case 14:    // Reset both servos
@@ -354,7 +348,7 @@ void SetVerticalServo() {
   if(serialOutput == true) {
     SerialRASP.print("19 ");
     SerialRASP.print(currentValues[1]);
-    SerialRASP.println(":Servos: set horizontal to precedent value.");
+    SerialRASP.println(":Servos: set vertical to precedent value.");
   }
 }
 
