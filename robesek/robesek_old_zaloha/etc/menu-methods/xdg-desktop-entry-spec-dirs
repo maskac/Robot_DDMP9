@@ -1,0 +1,59 @@
+#!/usr/bin/install-menu
+# xdg desktop entry spec - directory generation
+# http://www.freedesktop.org/Standards/desktop-entry-spec
+# Copyright 2004 - Chris Cheney
+# Licensed under the GNU General Public License, version 2.
+
+!include lang.h
+!include menu.h
+
+compat="menu-2"
+
+outputencoding="UTF-8";
+outputlanguage="C";
+
+function section() =
+	"Name=" title() "\n"
+	forall(sections_translations(),"lang",
+		"Name[" $lang "]=" translate($lang,title())
+     		"\n");
+
+function comment() =
+	"Comment=" $longtitle "\n"
+	forall(sections_translations(),"lang",
+		"Comment[" $lang "]=" translate($lang,$longtitle)
+     		"\n");
+
+function DirEntry() =
+	"[Desktop Entry]\n"
+	"Type=Directory\n"
+	"Encoding=UTF-8\n"
+	section()
+	ifnempty($longtitle, comment())
+	"Icon=" ifelse(icon(),icon(), 
+                      "debian" replacewith(tolower($section),"/ ","--")) "\n";
+
+supported;
+ x11 = ;
+ text = ;
+endsupported;
+
+startmenu = "";
+endmenu = "";
+submenutitle = DirEntry();
+
+treewalk = "M";
+
+genmenu = ifempty($command,tolower("debian" replacewith($section,"/ ","--") ".directory"));
+
+rootsection = "";
+
+prerun     = "rm -rf  '" prefix() "'";
+
+removemenu = "rm -rf  '" prefix() "'";
+
+preoutput = "";
+
+rootprefix = "/var/lib/menu-xdg/desktop-directories/menu-xdg";
+
+userprefix = ".local/share/desktop-directories/menu-xdg";

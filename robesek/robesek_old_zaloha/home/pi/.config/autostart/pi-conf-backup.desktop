@@ -1,0 +1,3 @@
+[Desktop Entry]
+Exec=sh -c 'zenity --info --text="Your Raspbian system has been upgraded to the latest version.\n\nTo ensure compatibility with the new version, some configuration files have been overwritten -\nif you had customised your system, some of your changes may have been lost.\n\nYour original configuration files have been backed up and put in the directory /home/pi/oldconffiles\n" && rm ~/.config/autostart/pi-conf-backup.desktop'
+Type=Application

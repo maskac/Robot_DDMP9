@@ -1,0 +1,41 @@
+html,body{
+    margin:0;
+    height:100%;
+    overflow:hidden;
+    background-color:black
+}
+
+.video { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+    text-align:bottom
+}
+
+img {
+    min-height:100%;
+    min-width:100%;
+    height:auto;
+    width:auto;
+    position:absolute;
+    left:-100%; right:-100%;
+    margin:auto;
+}
+
+h2 { 
+   position: absolute; 
+   vertical-align:bottom;
+   left: 0; 
+    top: 800px;
+   width: 100%;
+}
+h2 span { 
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
+}
+h2 span.spacer {
+   padding:0 5px;
+}

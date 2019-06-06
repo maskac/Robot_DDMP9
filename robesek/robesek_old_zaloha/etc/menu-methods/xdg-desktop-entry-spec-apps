@@ -1,0 +1,62 @@
+#!/usr/bin/install-menu
+# xdg desktop entry spec - applications generation
+# http://www.freedesktop.org/Standards/desktop-entry-spec
+# Copyright 2004 - Chris Cheney
+# Licensed under the GNU General Public License, version 2.
+
+!include lang.h
+!include menu.h
+
+compat="menu-2"
+outputencoding="UTF-8";
+outputlanguage="C";
+
+function name() =
+	"Name=" title() "\n"
+	forall(sections_translations(),"lang",
+		"Name[" $lang "]=" translate($lang,title())
+     		"\n");
+
+function comment() =
+	"Comment=" $longtitle "\n"
+	forall(sections_translations(),"lang",
+		"Comment[" $lang "]=" translate($lang,$longtitle)
+     		"\n");
+
+
+function AppEntry($terminal) =
+	"[Desktop Entry]\n"
+	"Type=Application\n"
+	"Encoding=UTF-8\n"
+	name()
+	ifnempty($longtitle, comment())
+	ifnempty($generictitle,"GenericName=" $generictitle "\n")
+	ifnempty(icon(),"Icon=" icon() "\n")
+	"Exec=" $command "\n"
+	"Terminal=" $terminal "\n"
+	"Categories=X-Debian" replacewith($basesection,"/ ","--") ";\n";
+
+supported;
+ x11 = AppEntry("false");
+ text = AppEntry("true");
+endsupported;
+
+startmenu = "";
+endmenu = "";
+submenutitle = "";
+
+treewalk = "M";
+
+genmenu = ifnempty($command,"X-Debian" replacewith($basesection,"/ ","--") "-" tolower(replacewith($title,"/ ","__") ".desktop"));
+
+rootsection = "";
+
+prerun     = "rm -rf  '" prefix() "'";
+
+removemenu = "rm -rf  '" prefix() "'";
+
+preoutput = "";
+
+rootprefix = "/var/lib/menu-xdg/applications/menu-xdg";
+
+userprefix = ".local/share/applications/menu-xdg";

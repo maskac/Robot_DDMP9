@@ -1,0 +1,10 @@
+TARGETS = php7.0-fpm triggerhappy dhcpcd fake-hwclock apache2 motion nginx mosquitto log_daemon.sh bluetooth lightdm saned cups-browsed cups urandom alsa-utils plymouth avahi-daemon sendsigs rsyslog umountnfs.sh rpcbind nfs-common hwclock.sh networking umountfs umountroot halt reboot
+avahi-daemon: saned cups-browsed
+sendsigs: alsa-utils bluetooth avahi-daemon motion saned php7.0-fpm nginx triggerhappy plymouth cups-browsed mosquitto log_daemon.sh lightdm apache2
+rsyslog: bluetooth avahi-daemon saned nginx cups-browsed sendsigs mosquitto log_daemon.sh apache2 cups
+umountnfs.sh: alsa-utils bluetooth avahi-daemon motion saned php7.0-fpm nginx triggerhappy plymouth sendsigs cups-browsed rsyslog mosquitto log_daemon.sh lightdm apache2
+networking: umountnfs.sh php7.0-fpm nginx cups-browsed rpcbind apache2
+umountfs: alsa-utils bluetooth avahi-daemon motion saned umountnfs.sh php7.0-fpm nginx triggerhappy dhcpcd urandom plymouth cups-browsed mosquitto networking log_daemon.sh lightdm hwclock.sh rpcbind apache2
+umountroot: umountfs fake-hwclock
+halt: umountroot
+reboot: umountroot

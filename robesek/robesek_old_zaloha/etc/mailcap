@@ -1,0 +1,183 @@
+###############################################################################
+#
+#  MIME media types and programs that process those types
+#
+#  Much of this file is generated automatically by the program "update-mime".
+#  Please see the "update-mime" man page for more information.
+#
+#  Users can add their own rules if they wish by creating a ".mailcap"
+#  file in their home directory.  Entries included there will take
+#  precedence over those listed here.
+#
+###############################################################################
+
+
+###############################################################################
+#
+#  User section follows:  Any entries included in this section will take
+#  precedence over those created by "update-mime".  DO NOT CHANGE the
+#  "User Section Begins" and "User Section Ends" lines, or anything outside
+#  of this section!
+#
+
+# ----- User Section Begins ----- #
+# -----  User Section Ends  ----- #
+
+###############################################################################
+
+text/plain; less '%s'; needsterminal
+video/mpeg; vlc %s; description="MPEG Video"; test=test -n "$DISPLAY"
+video/x-mpeg; vlc %s; description="MPEG Video"; test=test -n "$DISPLAY"
+video/mpeg-system; vlc %s; description="MPEG Video"; test=test -n "$DISPLAY"
+video/x-mpeg-system; vlc %s; description="MPEG Video"; test=test -n "$DISPLAY"
+audio/x-wav; vlc %s; description="WAV Audio"; nametemplate=%s.wav; test=test -n "$DISPLAY"
+video/mpeg4; vlc %s; description="MPEG-4 Video"; test=test -n "$DISPLAY"
+audio/mpeg; vlc %s; description="MPEG Audio"; nametemplate=%s.mpg; test=test -n "$DISPLAY"
+audio/mpegurl; vlc %s; description="MPEG Audio URL"; nametemplate=%s.m3u; test=test -n "$DISPLAY"
+audio/x-mp3; vlc %s; nametemplate=%s.mp3; description="MPEG Audio"; test=test -n "$DISPLAY"
+audio/mpeg4; vlc %s; description="MPEG-4 Audio"; test=test -n "$DISPLAY"
+application/mpeg4-iod; vlc %s; description="MPEG-4 Video"; test=test -n "$DISPLAY"
+application/mpeg4-muxcodetable; vlc %s; description="MPEG-4 Video"; test=test -n "$DISPLAY"
+application/x-troff-man; /usr/bin/man -X100 -l '%s'; test=test -n "$DISPLAY" -a -e /usr/bin/gxditview; description=Man page
+text/troff; /usr/bin/man -X100 -l '%s'; test=test -n "$DISPLAY" -a -e /usr/bin/gxditview; description=Man page
+application/x-troff-man; /usr/bin/man -l '%s'; needsterminal; description=Man page
+text/troff; /usr/bin/man -l '%s'; needsterminal; description=Man page
+application/x-scratch-project; scratch %s; test=test "$DISPLAY" != ""; description=Scratch Application; nametemplate=%s.sb
+text/html; /usr/bin/sensible-browser %s; description=HTML Text; nametemplate=%s.html
+application/pdf; /usr/bin/xpdf %s; test=test "$DISPLAY" != ""; description=Portable Document Format; nametemplate=%s.pdf
+application/x-pdf; /usr/bin/xpdf %s; test=test "$DISPLAY" != ""; description=Portable Document Format; nametemplate=%s.pdf
+application/x-troff-man; /usr/bin/nroff -mandoc -Tutf8; copiousoutput; print=/usr/bin/nroff -mandoc -Tutf8 | print text/plain:-
+application/x-info; /usr/bin/info -f '%s'; needsterminal; description=GNU Info document
+application/x-image;	squeak %s; nametemplate=%s.image; test=test "$DISPLAY" != ""
+application/squeak-image;	squeak %s; nametemplate=%s.image; test=test "$DISPLAY" != ""
+application/squeak-project;	squeak %s; nametemplate=%s.pr; test=test "$DISPLAY" != ""
+text/plain; more %s; needsterminal
+application/x-rar; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="RAR Archive"; test=test -n "$DISPLAY" && test -e /usr/bin/unrar
+application/rar; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="RAR Archive"; test=test -n "$DISPLAY" && test -e /usr/bin/unrar
+application/x-arj; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="ARJ Archive"; test=test -n "$DISPLAY" && test -e /usr/bin/arj
+application/arj; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="ARJ Archive"; test=test -n "$DISPLAY" && test -e /usr/bin/arj
+application/x-zip; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="ZIP Archive"; test=test -n "$DISPLAY" && test -e /usr/bin/unzip
+application/zip; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="ZIP Archive"; test=test -n "$DISPLAY" && test -e /usr/bin/unzip
+application/x-redhat-package-manager; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="RPM Archive"; test=test -n "$DISPLAY" && test -f /usr/bin/rpm
+application/x-tar; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="TAR Archive"; test=test -n "$DISPLAY"
+application/x-gtar; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="TAR Archive"; test=test -n "$DISPLAY"
+application/x-ustar; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="TAR Archive"; test=test -n "$DISPLAY"
+application/x-gzip; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="GZ compressed file"; test=test -n "$DISPLAY"
+application/x-bzip2; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="BZIP2 compressed file"; test=test -n "$DISPLAY"
+application/x-lzma; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="LZMA compressed file"; test=test -n "$DISPLAY"
+application/x-xz; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="XZ compressed file"; test=test -n "$DISPLAY"
+application/x-xz-compressed-tar; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="XZ compressed tar file"; test=test -n "$DISPLAY"
+text/html; chromium-browser --temp-profile %s; test=test -n "$DISPLAY"
+text/xml; chromium-browser --temp-profile %s; test=test -n "$DISPLAY"
+application/xhtml_xml; chromium-browser --temp-profile %s; test=test -n "$DISPLAY"
+x-scheme-handler/http; chromium-browser --temp-profile %s; test=test -n "$DISPLAY"
+x-scheme-handler/https; chromium-browser --temp-profile %s; test=test -n "$DISPLAY"
+x-scheme-handler/mailto; claws-mail --compose --attach %s; test=test -n "$DISPLAY"
+text/html; dillo %s; test=test -n "$DISPLAY"
+text/xml; dillo %s; test=test -n "$DISPLAY"
+application/xhtml+xml; dillo %s; test=test -n "$DISPLAY"
+text/html; epiphany-browser %s; test=test -n "$DISPLAY"
+text/xml; epiphany-browser %s; test=test -n "$DISPLAY"
+application/xhtml+xml; epiphany-browser %s; test=test -n "$DISPLAY"
+x-scheme-handler/http; epiphany-browser -n %s; test=test -n "$DISPLAY"
+x-scheme-handler/https; epiphany-browser -n %s; test=test -n "$DISPLAY"
+text/plain; geany %s; test=test -n "$DISPLAY"
+text/x-chdr; geany %s; test=test -n "$DISPLAY"
+text/x-csrc; geany %s; test=test -n "$DISPLAY"
+text/x-c++hdr; geany %s; test=test -n "$DISPLAY"
+text/x-c++src; geany %s; test=test -n "$DISPLAY"
+text/x-java; geany %s; test=test -n "$DISPLAY"
+text/x-dsrc; geany %s; test=test -n "$DISPLAY"
+text/x-pascal; geany %s; test=test -n "$DISPLAY"
+text/x-perl; geany %s; test=test -n "$DISPLAY"
+text/x-python; geany %s; test=test -n "$DISPLAY"
+application/x-php; geany %s; test=test -n "$DISPLAY"
+application/x-httpd-php3; geany %s; test=test -n "$DISPLAY"
+application/x-httpd-php4; geany %s; test=test -n "$DISPLAY"
+application/x-httpd-php5; geany %s; test=test -n "$DISPLAY"
+application/xml; geany %s; test=test -n "$DISPLAY"
+text/html; geany %s; test=test -n "$DISPLAY"
+text/css; geany %s; test=test -n "$DISPLAY"
+text/x-sql; geany %s; test=test -n "$DISPLAY"
+text/x-diff; geany %s; test=test -n "$DISPLAY"
+image/bmp; gpicview %s; test=test -n "$DISPLAY"
+image/gif; gpicview %s; test=test -n "$DISPLAY"
+image/jpeg; gpicview %s; test=test -n "$DISPLAY"
+image/jpg; gpicview %s; test=test -n "$DISPLAY"
+image/png; gpicview %s; test=test -n "$DISPLAY"
+image/tiff; gpicview %s; test=test -n "$DISPLAY"
+image/x-bmp; gpicview %s; test=test -n "$DISPLAY"
+image/x-pcx; gpicview %s; test=test -n "$DISPLAY"
+image/x-tga; gpicview %s; test=test -n "$DISPLAY"
+image/x-portable-pixmap; gpicview %s; test=test -n "$DISPLAY"
+image/x-portable-bitmap; gpicview %s; test=test -n "$DISPLAY"
+image/x-targa; gpicview %s; test=test -n "$DISPLAY"
+image/x-portable-greymap; gpicview %s; test=test -n "$DISPLAY"
+application/pcx; gpicview %s; test=test -n "$DISPLAY"
+image/svg+xml; gpicview %s; test=test -n "$DISPLAY"
+image/svg-xml; gpicview %s; test=test -n "$DISPLAY"
+text/plain; leafpad %s; test=test -n "$DISPLAY"
+application/vnd.openofficeorg.extension; libreoffice --math %s; test=test -n "$DISPLAY"
+x-scheme-handler/vnd.libreoffice.cmis; libreoffice --math %s; test=test -n "$DISPLAY"
+application/vnd.oasis.opendocument.text-flat-xml; libreoffice %s; test=test -n "$DISPLAY"
+application/vnd.oasis.opendocument.spreadsheet-flat-xml; libreoffice %s; test=test -n "$DISPLAY"
+application/vnd.oasis.opendocument.graphics-flat-xml; libreoffice %s; test=test -n "$DISPLAY"
+application/vnd.oasis.opendocument.presentation-flat-xml; libreoffice %s; test=test -n "$DISPLAY"
+text/html; netsurf-gtk %s; test=test -n "$DISPLAY"
+text/xml; netsurf-gtk %s; test=test -n "$DISPLAY"
+application/xhtml+xml; netsurf-gtk %s; test=test -n "$DISPLAY"
+application/xml; netsurf-gtk %s; test=test -n "$DISPLAY"
+image/gif; netsurf-gtk %s; test=test -n "$DISPLAY"
+image/jpeg; netsurf-gtk %s; test=test -n "$DISPLAY"
+image/png; netsurf-gtk %s; test=test -n "$DISPLAY"
+inode/directory; pcmanfm %s; test=test -n "$DISPLAY"
+application/x-rpm; pi-gpk-install-local-file %s; test=test -n "$DISPLAY"
+application/x-redhat-package-manager; pi-gpk-install-local-file %s; test=test -n "$DISPLAY"
+application/x-deb; pi-gpk-install-local-file %s; test=test -n "$DISPLAY"
+application/x-app-package; pi-gpk-install-local-file %s; test=test -n "$DISPLAY"
+application/vnclicense-key; vnclicensehelper -key %s; test=test -n "$DISPLAY"
+application/vnc-shortcut; vncviewer %s; test=test -n "$DISPLAY"
+application/x-image; squeak %s; test=test -n "$DISPLAY"
+application/squeak-image; squeak %s; test=test -n "$DISPLAY"
+application/squeak-project; squeak %s; test=test -n "$DISPLAY"
+text/plain; vim %s; needsterminal
+text/plain; view %s; edit=vim %s; compose=vim %s; test=test -x /usr/bin/vim; needsterminal
+video/mpeg; vlc -I rc -V caca %s; needsterminal; description="MPEG Video"
+video/x-mpeg; vlc -I rc -V caca %s; needsterminal; description="MPEG Video"
+video/mpeg-system; vlc -I rc -V caca %s; needsterminal; description="MPEG Video"
+video/x-mpeg-system; vlc -I rc -V caca %s; needsterminal; description="MPEG Video"
+audio/x-wav; vlc -I rc -V caca %s; nametemplate=%s.wav; needsterminal; description="WAV Audio"
+video/mpeg4; vlc -I rc -V caca %s; needsterminal; description="MPEG-4 Video"
+audio/mpeg; vlc -I rc -V caca %s; nametemplate=%s.mpg; needsterminal; description="MPEG Audio"
+audio/mpegurl; vlc -I rc -V caca %s; nametemplate=%s.m3u; needsterminal; description="MPEG Audio URL"
+audio/x-mp3; vlc -I rc -V caca %s; nametemplate=%s.mp3; needsterminal; description="MPEG Audio"
+audio/mpeg4; vlc -I rc -V caca %s; needsterminal; description="MPEG-4 Audio"
+application/mpeg4-iod; vlc -I rc -V caca %s; needsterminal; description="MPEG-4 Video"
+application/mpeg4-muxcodetable; vlc -I rc -V caca %s; needsterminal; description="MPEG-4 Video"
+video/x-msvideo; vlc %s; description="MS Video (AVI)"; test=test -n "$DISPLAY"
+video/quicktime; vlc %s; description="Apple Quicktime Video"; test=test -n "$DISPLAY"
+application/ogg; vlc %s; nametemplate=%s.ogg; description="Ogg stream"; test=test -n "$DISPLAY"
+application/x-ogg; vlc %s; nametemplate=%s.ogg; description="Ogg stream"; test=test -n "$DISPLAY"
+video/ogg; vlc %s; description="Ogg Video"; test=test -n "$DISPLAY"
+application/x-ms-asf-plugin; vlc %s; description="Windows Media Video"; test=test -n "$DISPLAY"
+application/x-mplayer2; vlc %s; description="Windows Media"; test=test -n "$DISPLAY"
+application/zip; unzip -l %s; nametemplate=%s.zip; copiousoutput
+text/plain; view %s; edit=vi %s; compose=vi %s; needsterminal
+video/x-msvideo; vlc -I rc -V caca %s; needsterminal; description="MS Video (AVI)"
+video/quicktime; vlc -I rc -V caca %s; needsterminal; description="Apple Quicktime Video"
+application/ogg; vlc -I rc -V caca %s; nametemplate=%s.ogg; needsterminal; description="Ogg stream"
+application/x-ogg; vlc -I rc -V caca %s; nametemplate=%s.ogg; needsterminal; description="Ogg stream"
+video/ogg; vlc -I rc -V caca %s; needsterminal; description="Ogg Video"
+application/x-ms-asf-plugin; vlc -I rc -V caca %s; needsterminal; description="Windows Media Video"
+application/x-mplayer2; vlc -I rc -V caca %s; needsterminal; description="Windows Media"
+application/x-troff-man; /usr/bin/man -Tascii -l '%s' | col -b; copiousoutput; description=Man page
+text/troff; /usr/bin/man -Tascii -l '%s' | col -b; copiousoutput; description=Man page
+text/*; less '%s'; needsterminal
+text/*; view %s; edit=vim %s; compose=vim %s; test=test -x /usr/bin/vim; needsterminal
+application/x-info; /usr/bin/info --subnodes -o /dev/stdout -f '%s' 2>/dev/null; copiousoutput; description=GNU Info document
+application/x-tar; /bin/tar tvf '%s'; print=/bin/tar tvf - | print text/plain:-; copiousoutput
+application/x-gtar; /bin/tar tvf '%s'; print=/bin/tar tvf - | print text/plain:-; copiousoutput
+application/x-ustar; /bin/tar tvf '%s'; print=/bin/tar tvf - | print text/plain:-; copiousoutput
+text/*; more %s; needsterminal
+text/*; view %s; edit=vi %s; compose=vi %s; needsterminal
+application/vnd.debian.binary-package; /usr/lib/mime/debian-view %s; needsterminal; description=Debian GNU/Linux Package; nametemplate=%s.deb

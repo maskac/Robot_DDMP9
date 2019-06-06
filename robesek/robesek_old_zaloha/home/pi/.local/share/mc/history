@@ -1,0 +1,92 @@
+[mc.esc.timeout]
+0=1000000
+
+[name]
+0=*
+
+[ignoredirs]
+0=
+
+[start]
+0=
+1=.
+
+[inpmc.fm.menu.exec.parameter]
+0=unzip
+
+[inpmc.fm.mkdir]
+0=gzymlit
+1=gymlit
+2=wall
+
+[input-def]
+0=*
+
+[input2]
+0=/var/www/html/wall
+
+[edit-word-wrap]
+0=72
+
+[edit-tab-spacing]
+0=8
+
+[save-as]
+0=AcceLoop.sh
+1=/boot/cmdline.txt\n
+2=/etc/raspimjpeg
+3=/data/web/minicam/index.php
+4=/etc/nginx/sites-enabled/default
+
+[cmdline]
+0=cd /boot
+1=sudo mcedit cmdline.txt 
+2=cd /etc
+3=OA[21~
+4=sudo systemctl nginx restart
+5=mcedit default 
+6=sudo mcedit default 
+7=sudo systemctl restart nginx
+8=exit 
+9=
+
+[Dir Hist New Right Panel]
+0=/etc/rc4.d
+1=/etc/systemd/system
+2=/boot
+3=/etc
+4=/home/pi/test
+5=/home/pi/.config
+6=/home/pi
+7=/home/pi/dio-0.1.0
+
+[Dir Hist New Left Panel]
+0=/home/pi/test
+1=/home/pi/.config
+2=/boot/overlays
+3=/boot
+4=/data/web/minicam
+5=/etc
+6=/etc/nginx
+7=/etc/nginx/sites-enabled
+8=/home/pi/Downloads
+9=/home/pi/Robot_DDMP9
+10=/home
+11=/
+12=/data
+13=/data/web
+14=/home/pi/dio-0.1.0
+15=/home/pi
+
+[mc.shared.search]
+0=getty
+1=ROBES
+2=CONFIG_FILE2
+3=mjpeg
+4=reload_ajax
+5=ajax_status
+6=reload_img
+
+[inpmc.edit.goto-line]
+0=59
+1=40

@@ -1,0 +1,11 @@
+# Defaults for raspberrypi-kernel
+
+# Uncomment the following line to enable generation of
+# /boot/initrd.img-KVER files (requires initramfs-tools)
+
+#INITRD=Yes
+
+# Uncomment the following line to enable generation of
+# /boot/initrd(7).img files (requires rpi-initramfs-tools)
+
+#RPI_INITRD=Yes

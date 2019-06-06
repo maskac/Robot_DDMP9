@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="desktop">
+			<dir name="gnome">
+				<dir name="url-handlers">
+					<dir name="vnclicenseserver">
+						<entry name="need-terminal" mtime="1539277114" type="schema" stype="bool" owner="vnclicenseserver">
+							<local_schema locale="C">
+								<default type="bool" value="false"/>
+							</local_schema>
+						</entry>
+						<entry name="command" mtime="1539277114" type="schema" stype="string" owner="vnclicenseserver">
+							<local_schema locale="C">
+								<default type="string">
+									<stringvalue>/usr/local/bin/vnclicensewiz %s</stringvalue>
+								</default>
+							</local_schema>
+						</entry>
+						<entry name="enabled" mtime="1539277114" type="schema" stype="bool" owner="vnclicenseserver">
+							<local_schema locale="C" short_desc="Set to true to enable handling of vnclicenseserver:// URLs">
+								<default type="bool" value="true"/>
+							</local_schema>
+						</entry>
+					</dir>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+	<dir name="desktop">
+		<dir name="gnome">
+			<dir name="url-handlers">
+				<dir name="vnclicenseserver">
+					<entry name="need-terminal" mtime="1539277114" schema="/schemas/desktop/gnome/url-handlers/vnclicenseserver/need-terminal"/>
+					<entry name="command" mtime="1539277114" schema="/schemas/desktop/gnome/url-handlers/vnclicenseserver/command"/>
+					<entry name="enabled" mtime="1539277114" schema="/schemas/desktop/gnome/url-handlers/vnclicenseserver/enabled"/>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

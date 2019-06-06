@@ -1,0 +1,3 @@
+KERNEL=="uv4l*", MODE="0666" GROUP="video"
+KERNEL=="video*", MODE="0666" GROUP="video"
+KERNEL=="cuse", MODE="0666" GROUP="video"
