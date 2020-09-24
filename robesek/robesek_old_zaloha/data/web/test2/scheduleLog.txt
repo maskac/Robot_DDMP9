@@ -1,0 +1,231 @@
+[2017/02/25 20:52:14] Scheduled management tasks. Next at 1488055934
+{2017/02/25 21:42:40} RaspiMJPEG Version 5.7.08
+{2017/02/25 21:42:41} recommended video buffer size 65536
+{2017/02/25 21:42:41} h264 size set to 131072
+{2017/02/25 21:42:41} recommended video buffers 1
+{2017/02/25 21:42:41} h264 buffers set to recommended 1
+{2017/02/25 21:42:41} Opening FIFO 0 /var/www/html/FIFO 7
+{2017/02/25 21:42:41} Opening FIFO 1 /var/www/html/FIFO11 8
+{2017/02/25 21:42:41} MJPEG streaming, ready to receive commands
+{2017/02/25 21:42:41} send smd 9
+{2017/02/25 22:32:24} RaspiMJPEG Version 5.7.08
+{2017/02/25 22:32:24} recommended video buffer size 65536
+{2017/02/25 22:32:24} h264 size set to 131072
+{2017/02/25 22:32:24} recommended video buffers 1
+{2017/02/25 22:32:24} h264 buffers set to recommended 1
+{2017/02/25 22:32:24} Opening FIFO 0 /var/www/html/FIFO 7
+{2017/02/25 22:32:24} Opening FIFO 1 /var/www/html/FIFO11 8
+{2017/02/25 22:32:24} MJPEG streaming, ready to receive commands
+{2017/02/25 22:32:24} send smd 9
+{2017/02/26 10:38:40} Starting command loop
+{2017/02/26 10:38:50} RaspiMJPEG Version 5.7.08
+{2017/02/26 10:38:50} recommended video buffer size 65536
+{2017/02/26 10:38:50} h264 size set to 131072
+{2017/02/26 10:38:50} recommended video buffers 1
+{2017/02/26 10:38:50} h264 buffers set to recommended 1
+{2017/02/26 10:38:50} Opening FIFO 0 /var/www/html/FIFO 7
+{2017/02/26 10:38:50} Opening FIFO 1 /var/www/html/FIFO11 8
+{2017/02/26 10:38:50} MJPEG streaming, ready to receive commands
+{2017/02/26 10:38:50} send smd 9
+[2017/02/26 10:38:55] RaspiCam support started
+[2017/02/26 10:39:15] Capture Pipe already exists /var/www/html/FIFO1
+[2017/02/26 10:39:15] Scheduler loop is started
+{2017/02/26 10:39:15} Starting command loop
+[2017/02/26 10:39:15] Reload parameters command requested
+[2017/02/26 10:39:15] Scheduler loop is started
+[2017/02/26 10:39:16] New period detected 0
+[2017/02/26 10:39:16] Scheduled management tasks. Next at 1488105556
+{2017/02/26 10:40:04} Capturing started
+{2017/02/26 10:40:05} Capturing image
+{2017/02/26 10:40:06} Already capturing. Ignore 
+{2017/02/26 10:41:27} SIGINT/SIGTERM received, stopping
+{2017/02/26 10:41:27} Capturing stopped
+{2017/02/26 10:41:27} Add /var/www/html/media/vi_0000_20170226_104004.mp4 to Box Queue at pos 0
+{2017/02/26 10:41:39} RaspiMJPEG Version 5.7.08
+{2017/02/26 10:41:40} recommended video buffer size 65536
+{2017/02/26 10:41:40} h264 size set to 131072
+{2017/02/26 10:41:40} recommended video buffers 1
+{2017/02/26 10:41:40} h264 buffers set to recommended 1
+[2017/02/26 10:41:41] RaspiCam support started
+[2017/02/26 10:41:41] Making Pipe to receive capture commands /var/www/html/FIFO1
+[2017/02/26 10:41:41] Scheduler loop is started
+[2017/02/26 10:41:42] New period detected 0
+[2017/02/26 10:41:42] Scheduled management tasks. Next at 1488105702
+{2017/02/26 10:41:44} Opening FIFO 0 /var/www/html/FIFO 7
+{2017/02/26 10:41:44} MJPEG streaming, ready to receive commands
+{2017/02/26 10:41:44} send smd 9
+{2017/02/26 10:41:44} Starting command loop
+[2017/02/26 10:41:44] Reload parameters command requested
+[2017/02/26 10:41:44] Scheduler loop is started
+{2017/02/26 10:41:44} Capturing started
+[2017/02/26 10:41:45] New period detected 0
+[2017/02/26 10:41:45] Scheduled management tasks. Next at 1488105705
+{2017/02/26 10:45:14} RaspiMJPEG Version 5.7.08
+{2017/02/26 10:45:14} recommended video buffer size 65536
+{2017/02/26 10:45:14} h264 size set to 131072
+{2017/02/26 10:45:14} recommended video buffers 1
+{2017/02/26 10:45:14} h264 buffers set to recommended 1
+[2017/02/26 10:45:50] RaspiCam support started
+[2017/02/26 10:45:50] Capture Pipe already exists /var/www/html/FIFO1
+[2017/02/26 10:45:50] Scheduler loop is started
+[2017/02/26 10:45:51] New period detected 0
+[2017/02/26 10:45:51] Scheduled management tasks. Next at 1488105951
+[2017/02/26 11:45:52] Scheduled management tasks. Next at 1488109552
+{2017/02/26 11:46:22} Opening FIFO 0 /var/www/html/FIFO 7
+{2017/02/26 11:46:22} MJPEG streaming, ready to receive commands
+{2017/02/26 11:46:22} send smd 9
+{2017/02/26 11:46:22} Starting command loop
+[2017/02/26 11:46:22] Reload parameters command requested
+[2017/02/26 11:46:22] Scheduler loop is started
+{2017/02/26 11:46:22} Capturing started
+[2017/02/26 11:46:23] New period detected 0
+[2017/02/26 11:46:23] Scheduled management tasks. Next at 1488109583
+{2017/02/26 12:07:49} RaspiMJPEG Version 5.7.08
+{2017/02/26 12:07:50} recommended video buffer size 65536
+{2017/02/26 12:07:50} h264 size set to 131072
+{2017/02/26 12:07:50} recommended video buffers 1
+{2017/02/26 12:07:50} h264 buffers set to recommended 1
+[2017/02/26 12:07:55] RaspiCam support started
+[2017/02/26 12:08:15] Capture Pipe already exists /var/www/html/FIFO1
+[2017/02/26 12:08:15] Scheduler loop is started
+[2017/02/26 12:08:16] New period detected 0
+[2017/02/26 12:08:16] Scheduled management tasks. Next at 1488110896
+[2017/03/16 18:43:29] New period detected 0
+[2017/03/16 18:43:29] Scheduled management tasks. Next at 1489689809
+{2017/03/16 18:54:01} RaspiMJPEG Version 5.8.01
+{2017/03/16 18:54:02} recommended video buffer size 65536
+{2017/03/16 18:54:02} h264 size set to 131072
+{2017/03/16 18:54:02} recommended video buffers 1
+{2017/03/16 18:54:02} h264 buffers set to recommended 1
+[2017/03/16 18:54:06] RaspiCam support started
+[2017/03/16 18:54:06] Capture Pipe already exists /var/www/html/FIFO1
+[2017/03/16 18:54:06] Scheduler loop is started
+[2017/03/16 18:54:07] New period detected 0
+[2017/03/16 18:54:07] Scheduled management tasks. Next at 1489690447
+{2017/03/16 18:57:20} RaspiMJPEG Version 5.8.01
+{2017/03/16 18:57:21} recommended video buffer size 65536
+{2017/03/16 18:57:21} h264 size set to 131072
+{2017/03/16 18:57:21} recommended video buffers 1
+{2017/03/16 18:57:21} h264 buffers set to recommended 1
+[2017/03/16 18:57:25] RaspiCam support started
+[2017/03/16 18:57:25] Capture Pipe already exists /var/www/html/FIFO1
+[2017/03/16 18:57:25] Scheduler loop is started
+[2017/03/16 18:57:26] New period detected 0
+[2017/03/16 18:57:26] Scheduled management tasks. Next at 1489690646
+{2017/03/16 19:02:25} RaspiMJPEG Version 5.8.01
+{2017/03/16 19:02:26} recommended video buffer size 65536
+{2017/03/16 19:02:26} h264 size set to 131072
+{2017/03/16 19:02:26} recommended video buffers 1
+{2017/03/16 19:02:26} h264 buffers set to recommended 1
+[2017/03/16 19:02:30] RaspiCam support started
+[2017/03/16 19:02:30] Capture Pipe already exists /var/www/html/FIFO1
+[2017/03/16 19:02:30] Scheduler loop is started
+[2017/03/16 19:02:31] New period detected 0
+[2017/03/16 19:02:31] Scheduled management tasks. Next at 1489690951
+{2017/03/16 19:37:09} RaspiMJPEG Version 5.8.01
+{2017/03/16 19:37:10} recommended video buffer size 65536
+{2017/03/16 19:37:10} h264 size set to 131072
+{2017/03/16 19:37:10} recommended video buffers 1
+{2017/03/16 19:37:10} h264 buffers set to recommended 1
+[2017/03/16 19:37:14] RaspiCam support started
+[2017/03/16 19:37:14] Capture Pipe already exists /var/www/html/FIFO1
+[2017/03/16 19:37:14] Scheduler loop is started
+[2017/03/16 19:37:15] New period detected 0
+[2017/03/16 19:37:15] Scheduled management tasks. Next at 1489693035
+[2017/03/23 18:04:30] Scheduled management tasks. Next at 1490292270
+{2017/03/23 19:42:01} RaspiMJPEG Version 5.8.01
+{2017/03/23 19:42:01} recommended video buffer size 65536
+{2017/03/23 19:42:01} h264 size set to 131072
+{2017/03/23 19:42:01} recommended video buffers 1
+{2017/03/23 19:42:01} h264 buffers set to recommended 1
+[2017/03/23 19:42:06] RaspiCam support started
+[2017/03/23 19:42:06] Capture Pipe already exists /var/www/html/FIFO1
+[2017/03/23 19:42:06] Scheduler loop is started
+[2017/03/23 19:42:07] New period detected 0
+[2017/03/23 19:42:07] Scheduled management tasks. Next at 1490298127
+[2017/03/30 19:23:42] Scheduled management tasks. Next at 1490898222
+{2017/03/23 19:41:57} RaspiMJPEG Version 5.8.01
+{2017/03/23 19:41:57} recommended video buffer size 65536
+{2017/03/23 19:41:57} h264 size set to 131072
+{2017/03/23 19:41:57} recommended video buffers 1
+{2017/03/23 19:41:57} h264 buffers set to recommended 1
+[2017/03/23 19:42:01] RaspiCam support started
+[2017/03/23 19:42:02] Capture Pipe already exists /var/www/html/FIFO1
+[2017/03/23 19:42:02] Scheduler loop is started
+[2017/03/23 19:42:03] New period detected 0
+[2017/03/23 19:42:03] Scheduled management tasks. Next at 1490298123
+[2017/04/06 18:03:04] Scheduled management tasks. Next at 1491498184
+{2017/04/06 18:12:07} Opening FIFO 0 /var/www/html/FIFO 7
+{2017/04/06 18:12:07} Opening FIFO 1 /var/www/html/FIFO11 8
+{2017/04/06 18:12:07} MJPEG streaming, ready to receive commands
+{2017/04/06 18:12:07} send smd 9
+{2017/04/06 18:12:07} Starting command loop
+{2017/04/06 18:12:07} Change: rotation = 180
+[2017/04/06 18:12:07] Reload parameters command requested
+[2017/04/06 18:12:07] Scheduler loop is started
+[2017/04/06 18:12:08] New period detected 0
+[2017/04/06 18:12:08] Scheduled management tasks. Next at 1491498728
+[2017/04/06 19:12:09] Scheduled management tasks. Next at 1491502329
+{2017/04/06 19:36:07} RaspiMJPEG Version 5.8.01
+{2017/04/06 19:36:08} recommended video buffer size 65536
+{2017/04/06 19:36:08} h264 size set to 131072
+{2017/04/06 19:36:08} recommended video buffers 1
+{2017/04/06 19:36:08} h264 buffers set to recommended 1
+[2017/04/06 19:36:12] RaspiCam support started
+[2017/04/06 19:36:12] Capture Pipe already exists /var/www/html/FIFO1
+[2017/04/06 19:36:12] Scheduler loop is started
+[2017/04/06 19:36:13] New period detected 0
+[2017/04/06 19:36:13] Scheduled management tasks. Next at 1491503773
+[2017/04/13 17:57:02] Scheduled management tasks. Next at 1492102622
+{2017/04/13 18:56:49} Opening FIFO 0 /var/www/html/FIFO 7
+{2017/04/13 18:56:49} Opening FIFO 1 /var/www/html/FIFO11 8
+{2017/04/13 18:56:49} MJPEG streaming, ready to receive commands
+{2017/04/13 18:56:49} send smd 9
+{2017/04/13 18:56:49} Starting command loop
+{2017/04/13 18:56:49} Change: hflip = 0
+{2017/04/13 18:56:49} Change: vflip = 0
+[2017/04/13 18:56:49] Reload parameters command requested
+[2017/04/13 18:56:49] Scheduler loop is started
+[2017/04/13 18:56:50] New period detected 0
+[2017/04/13 18:56:50] Scheduled management tasks. Next at 1492106210
+{2017/04/13 19:17:08} RaspiMJPEG Version 5.8.01
+{2017/04/13 19:17:09} recommended video buffer size 65536
+{2017/04/13 19:17:09} h264 size set to 131072
+{2017/04/13 19:17:09} recommended video buffers 1
+{2017/04/13 19:17:09} h264 buffers set to recommended 1
+[2017/04/13 19:17:13] RaspiCam support started
+[2017/04/13 19:17:13] Capture Pipe already exists /var/www/html/FIFO1
+[2017/04/13 19:17:13] Scheduler loop is started
+[2017/04/13 19:17:14] New period detected 0
+[2017/04/13 19:17:14] Scheduled management tasks. Next at 1492107434
+{2017/04/13 19:39:29} Opening FIFO 0 /var/www/html/FIFO 7
+{2017/04/13 19:39:29} Opening FIFO 1 /var/www/html/FIFO11 8
+{2017/04/13 19:39:29} MJPEG streaming, ready to receive commands
+{2017/04/13 19:39:29} send smd 9
+{2017/04/13 19:39:29} Starting command loop
+{2017/04/13 19:39:29} Capturing image
+[2017/04/13 19:39:29] Reload parameters command requested
+[2017/04/13 19:39:29] Scheduler loop is started
+[2017/04/13 19:39:30] New period detected 0
+[2017/04/13 19:39:30] Scheduled management tasks. Next at 1492108770
+{2017/04/13 19:54:54} RaspiMJPEG Version 5.8.01
+{2017/04/13 19:54:55} recommended video buffer size 65536
+{2017/04/13 19:54:55} h264 size set to 131072
+{2017/04/13 19:54:55} recommended video buffers 1
+{2017/04/13 19:54:55} h264 buffers set to recommended 1
+[2017/04/13 19:54:59] RaspiCam support started
+[2017/04/13 19:54:59] Capture Pipe already exists /var/www/html/FIFO1
+[2017/04/13 19:54:59] Scheduler loop is started
+[2017/04/13 19:55:00] New period detected 0
+[2017/04/13 19:55:00] Scheduled management tasks. Next at 1492109700
+[2017/04/27 18:02:13] Scheduled management tasks. Next at 1493312533
+{2017/04/27 18:23:21} Opening FIFO 0 /var/www/html/FIFO 7
+{2017/04/27 18:23:21} Opening FIFO 1 /var/www/html/FIFO11 8
+{2017/04/27 18:23:21} MJPEG streaming, ready to receive commands
+{2017/04/27 18:23:21} send smd 9
+{2017/04/27 18:23:21} Starting command loop
+{2017/04/27 18:23:21} Capturing image
+[2017/04/27 18:23:21] Reload parameters command requested
+[2017/04/27 18:23:21] Scheduler loop is started
+[2017/04/27 18:23:22] New period detected 0
+[2017/04/27 18:23:22] Scheduled management tasks. Next at 1493313802

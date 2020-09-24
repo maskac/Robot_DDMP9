@@ -1,0 +1,79 @@
+#========================================================================
+#
+# System-wide xpdfrc file
+#
+# Xpdf looks for a config file in the following two places:
+# 1. ~/.xpdfrc
+# 2. /etc/xpdf/xpdfrc
+#
+# Note that if ~/.xpdfrc exists, Xpdf will NOT read the system
+# configuration file /etc/xpdf/xpdfrc. You may wish to include it
+# from your ~/.xpdfrc using:
+#    include /etc/xpdf/xpdfrc
+# and then add additional settings.
+#
+# For complete details on config file syntax and available options, 
+# please see the xpdfrc(5) man page.
+#
+# http://www.foolabs.com/xpdf/
+#
+#========================================================================
+
+#----- PostScript output control
+
+# Set the default PostScript file or command.
+
+psFile			"|lpr"
+
+# Set the default PostScript paper size -- this can be letter, legal,
+# A4, or A3.  You can also specify a paper size as width and height
+# (in points). Xpdf uses the paper size in /etc/papersize by default.
+
+#psPaperSize		letter
+
+#----- text output control
+
+# Choose a text encoding for copy-and-paste output.  The Latin1, 
+# ASCII7, and UTF-8 encodings are built into Xpdf.
+
+#textEncoding		UTF-8
+
+# Choose the end-of-line convention for multi-line copy-and-paste.
+# The available options are unix, mac, and dos.
+
+#textEOL		unix
+
+#----- misc settings
+
+# Enable anti-aliasing of fonts. Default "yes".
+
+#antialias		no
+
+# Set the command used to run a web browser when a URL hyperlink is
+# clicked.
+
+urlCommand	"sensible-browser '%s'"
+
+# Unbind arrow keys so we can change fullscreen behavior
+unbind down any
+unbind right any
+unbind up any
+unbind left any
+
+# Rebind arrow keys to defaults in the windowed context
+bind down window scrollDown(16) 
+bind right window scrollRight(16)
+bind up window scrollUp(16)
+bind left window scrollLeft(16)
+
+# Bind arrow keys to next/prev page actions in the fullscreen context
+bind down fullScreen nextPage
+bind right fullScreen nextPage
+bind up fullScreen prevPage
+bind left fullScreen prevPage
+
+# Include additional character maps (these are provided by the
+# poppler-data package). The /etc/xpdf/includes file is automatically
+# kept up to date by the package scripts.  See the file itself for
+# more details.
+include /etc/xpdf/includes

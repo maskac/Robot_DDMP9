@@ -1,0 +1,63 @@
+#!/usr/bin/install-menu
+# xdg desktop entry spec - sessions generation
+# http://www.freedesktop.org/Standards/desktop-entry-spec
+# Copyright 2005 - Bill Allombert
+# Licensed under the GNU General Public License, version 2
+
+!include lang.h
+!include menu.h
+
+compat="menu-2"
+outputencoding="UTF-8";
+outputlanguage="C";
+
+function has_session() = shell("grep -l -e '^/usr/share/xsessions/' '/var/lib/dpkg/info/" $package ".list' 2>/dev/null");
+
+function name() =
+	"Name=" title() "\n"
+	forall(sections_translations(),"lang",
+		"Name[" $lang "]=" translate($lang,title())
+     		"\n");
+
+function comment() =
+	"Comment=" $longtitle "\n"
+	forall(sections_translations(),"lang",
+		"Comment[" $lang "]=" translate($lang,$longtitle)
+     		"\n");
+
+function AppEntry() =
+	"[Desktop Entry]\n"
+	"Encoding=UTF-8\n"
+	"Type=Application\n"
+        name()
+        ifnempty($longtitle, comment())
+	ifnempty($generictitle, "GenericName=" $generictitle "\n")
+	ifnempty(icon(),"Icon=" icon() "\n")
+	"Exec=" $command "\n"
+        "\n"
+        "[Window Manager]\n"
+        "SessionManaged=true\n";
+
+supported;
+ wm = AppEntry();
+endsupported;
+
+startmenu = "";
+endmenu = "";
+submenutitle = "";
+
+treewalk = "M";
+
+genmenu = ifnempty($command,ifempty(has_session(),
+            "X-Debian" replacewith($basesection,"/ ","--") 
+            "-" tolower(replacewith($title,"/ ","__") ".desktop")));
+
+rootsection = "";
+
+prerun     = "rm -rf  '" prefix() "'";
+
+removemenu = "rm -rf  '" prefix() "'";
+
+preoutput = "";
+
+rootprefix = "/var/lib/menu-xdg/xsessions";

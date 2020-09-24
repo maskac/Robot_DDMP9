@@ -1,0 +1,2 @@
+všelijaké nefunkèní interfaci jsou v robesek_old_zaloha\data\web
+posílání kamery je tøeba nahradit jiným softwarem, viz sobotkama

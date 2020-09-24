@@ -1,0 +1,5 @@
+ARDUINO_DIR = /usr/bin/arduino
+BOARD_TAG    = mega2560
+ARDUINO_PORT = /dev/ttyUSB0
+ARDUINO_LIBS = $(ARDUINO_DIR)/hardware/libraries
+include /usr/share/arduino/Arduino.mk

@@ -1,0 +1,93 @@
+Downloading/unpacking paho-mqtt
+  Getting page https://pypi.python.org/simple/paho-mqtt/
+  URLs to search for versions for paho-mqtt:
+  * https://pypi.python.org/simple/paho-mqtt/
+  Analyzing links from page https://pypi.python.org/simple/paho-mqtt/
+    Found link https://pypi.python.org/packages/02/59/4d183f02e06e9150be4d6f7fc76576301bd188227e0cb451979fdc1a0c6d/paho-mqtt-0.4.92.tar.gz#md5=70944f12aaf212b36e9e8eaf5c80ac07 (from https://pypi.python.org/simple/paho-mqtt/), version: 0.4.92
+    Found link https://pypi.python.org/packages/4f/4a/7cacf78295fe9e9c8ee4edce2b817c9f506b218c44cae28d727807f935b3/paho-mqtt-0.4.90.tar.gz#md5=18e944342ff26cadc06aff3d82441126 (from https://pypi.python.org/simple/paho-mqtt/), version: 0.4.90
+    Found link https://pypi.python.org/packages/51/ea/6c65fd07f5e77b9303fe4948caf81f6618a9e3e68a5f98c7dc0269d4dce0/paho-mqtt-0.9.1.tar.gz#md5=da0682aa71429fbd0c2f16dfb567f463 (from https://pypi.python.org/simple/paho-mqtt/), version: 0.9.1
+    Found link https://pypi.python.org/packages/82/d9/7064d3a0a1d62756a1a809c85b99f864c641b66de84c15458f72193b7708/paho-mqtt-1.2.tar.gz#md5=241150b3fcb920ddca4d33181f3238b1 (from https://pypi.python.org/simple/paho-mqtt/), version: 1.2
+    Found link https://pypi.python.org/packages/83/96/dacc2b78bc9c5cd83eed178e9ce35d7bceecf2dd38db079c0190423efd4a/paho-mqtt-1.1.tar.gz#md5=a6407b74eb5e5411e157be1de5c11366 (from https://pypi.python.org/simple/paho-mqtt/), version: 1.1
+    Found link https://pypi.python.org/packages/91/27/3764e239991acc8a202064e113be776fbd941320bde357b9e40b29fbcea7/paho-mqtt-0.4.91.tar.gz#md5=92971c87e75b1f43c04b8d94a9b52679 (from https://pypi.python.org/simple/paho-mqtt/), version: 0.4.91
+    Found link https://pypi.python.org/packages/9c/fb/d1cdca82dc88edd7562bfa0f6795600e5352c10f5c1c5abf0e9963e8fe2f/paho-mqtt-0.4.94.tar.gz#md5=c910a3d74baf5758532eb8a226cb2c03 (from https://pypi.python.org/simple/paho-mqtt/), version: 0.4.94
+    Found link https://pypi.python.org/packages/e8/dc/4acbf85f11f1545eddadefa13f5ab858aa9a7f2a508413e6091ec316d307/paho-mqtt-0.9.tar.gz#md5=adb67effaf10bfd837da2a08c96f6400 (from https://pypi.python.org/simple/paho-mqtt/), version: 0.9
+    Found link https://pypi.python.org/packages/ec/4d/834faa69313deec0d3414bdc276ec2e49d8b34e2305b6dbc70cf47d41f9a/paho-mqtt-1.0.tar.gz#md5=4d6e74bd2281559bf972f6e230eb882e (from https://pypi.python.org/simple/paho-mqtt/), version: 1.0
+  Using version 1.2 (newest of versions: 1.2, 1.1, 1.0, 0.9.1, 0.9, 0.4.94, 0.4.92, 0.4.91, 0.4.90)
+  Downloading from URL https://pypi.python.org/packages/82/d9/7064d3a0a1d62756a1a809c85b99f864c641b66de84c15458f72193b7708/paho-mqtt-1.2.tar.gz#md5=241150b3fcb920ddca4d33181f3238b1 (from https://pypi.python.org/simple/paho-mqtt/)
+  Running setup.py (path:/tmp/pip-build-dfANhY/paho-mqtt/setup.py) egg_info for package paho-mqtt
+    running egg_info
+    creating pip-egg-info/paho_mqtt.egg-info
+    writing pip-egg-info/paho_mqtt.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/paho_mqtt.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/paho_mqtt.egg-info/dependency_links.txt
+    writing manifest file 'pip-egg-info/paho_mqtt.egg-info/SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+    
+    reading manifest file 'pip-egg-info/paho_mqtt.egg-info/SOURCES.txt'
+    writing manifest file 'pip-egg-info/paho_mqtt.egg-info/SOURCES.txt'
+  Source in /tmp/pip-build-dfANhY/paho-mqtt has version 1.2, which satisfies requirement paho-mqtt
+Installing collected packages: paho-mqtt
+  Running setup.py install for paho-mqtt
+    Running command /usr/bin/python -c "import setuptools, tokenize;__file__='/tmp/pip-build-dfANhY/paho-mqtt/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-kmbmlZ-record/install-record.txt --single-version-externally-managed --compile
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib.linux-armv7l-2.7
+    creating build/lib.linux-armv7l-2.7/paho
+    copying src/paho/__init__.py -> build/lib.linux-armv7l-2.7/paho
+    creating build/lib.linux-armv7l-2.7/paho/mqtt
+    copying src/paho/mqtt/client.py -> build/lib.linux-armv7l-2.7/paho/mqtt
+    copying src/paho/mqtt/__init__.py -> build/lib.linux-armv7l-2.7/paho/mqtt
+    copying src/paho/mqtt/publish.py -> build/lib.linux-armv7l-2.7/paho/mqtt
+    copying src/paho/mqtt/subscribe.py -> build/lib.linux-armv7l-2.7/paho/mqtt
+    running install_lib
+    creating /usr/local/lib/python2.7/dist-packages/paho
+    error: could not create '/usr/local/lib/python2.7/dist-packages/paho': Permission denied
+    Complete output from command /usr/bin/python -c "import setuptools, tokenize;__file__='/tmp/pip-build-dfANhY/paho-mqtt/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-kmbmlZ-record/install-record.txt --single-version-externally-managed --compile:
+    running install
+
+running build
+
+running build_py
+
+creating build
+
+creating build/lib.linux-armv7l-2.7
+
+creating build/lib.linux-armv7l-2.7/paho
+
+copying src/paho/__init__.py -> build/lib.linux-armv7l-2.7/paho
+
+creating build/lib.linux-armv7l-2.7/paho/mqtt
+
+copying src/paho/mqtt/client.py -> build/lib.linux-armv7l-2.7/paho/mqtt
+
+copying src/paho/mqtt/__init__.py -> build/lib.linux-armv7l-2.7/paho/mqtt
+
+copying src/paho/mqtt/publish.py -> build/lib.linux-armv7l-2.7/paho/mqtt
+
+copying src/paho/mqtt/subscribe.py -> build/lib.linux-armv7l-2.7/paho/mqtt
+
+running install_lib
+
+creating /usr/local/lib/python2.7/dist-packages/paho
+
+error: could not create '/usr/local/lib/python2.7/dist-packages/paho': Permission denied
+
+----------------------------------------
+Cleaning up...
+Command /usr/bin/python -c "import setuptools, tokenize;__file__='/tmp/pip-build-dfANhY/paho-mqtt/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-kmbmlZ-record/install-record.txt --single-version-externally-managed --compile failed with error code 1 in /tmp/pip-build-dfANhY/paho-mqtt
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/install.py", line 295, in run
+    requirement_set.install(install_options, global_options, root=options.root_path)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 1436, in install
+    requirement.install(install_options, global_options, *args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 707, in install
+    cwd=self.source_dir, filter_stdout=self._filter_install, show_stdout=False)
+  File "/usr/lib/python2.7/dist-packages/pip/util.py", line 716, in call_subprocess
+    % (command_desc, proc.returncode, cwd))
+InstallationError: Command /usr/bin/python -c "import setuptools, tokenize;__file__='/tmp/pip-build-dfANhY/paho-mqtt/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-kmbmlZ-record/install-record.txt --single-version-externally-managed --compile failed with error code 1 in /tmp/pip-build-dfANhY/paho-mqtt

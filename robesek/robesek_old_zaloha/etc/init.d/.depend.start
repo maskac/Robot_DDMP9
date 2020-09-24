@@ -1,0 +1,23 @@
+TARGETS = rsyslog php7.0-fpm triggerhappy dhcpcd killprocs motd bootlogs apache2 single dbus motion nginx mosquitto log_daemon.sh cron ssh ntp rsync dphys-swapfile bluetooth avahi-daemon lightdm saned cups-browsed cups raspi-config plymouth rc.local rmnologin
+INTERACTIVE = apache2
+apache2: rsyslog
+single: killprocs motd bootlogs
+dbus: rsyslog
+motion: rsyslog
+nginx: rsyslog
+mosquitto: rsyslog
+log_daemon.sh: rsyslog
+cron: rsyslog
+ssh: rsyslog
+ntp: rsyslog
+rsync: rsyslog
+dphys-swapfile: rsyslog
+bluetooth: rsyslog dbus
+avahi-daemon: dbus rsyslog
+lightdm: dbus
+saned: rsyslog dbus
+cups-browsed: rsyslog
+cups: rsyslog
+plymouth: bluetooth rsyslog dbus avahi-daemon motion saned php7.0-fpm nginx triggerhappy dhcpcd cups-browsed mosquitto log_daemon.sh lightdm apache2 motd bootlogs cups cron ssh ntp rsync raspi-config dphys-swapfile
+rc.local: bluetooth rsyslog dbus avahi-daemon motion saned php7.0-fpm nginx triggerhappy dhcpcd cups-browsed mosquitto log_daemon.sh lightdm apache2 motd bootlogs cups cron ssh ntp rsync raspi-config dphys-swapfile
+rmnologin: bluetooth rsyslog dbus avahi-daemon motion saned php7.0-fpm nginx triggerhappy dhcpcd cups-browsed mosquitto log_daemon.sh lightdm apache2 motd bootlogs cups cron ssh ntp rsync raspi-config dphys-swapfile
